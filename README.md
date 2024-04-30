@@ -6,8 +6,8 @@
 
 | Asignaciones   | Nombres           |
 |----------------|-------------------|
-| Gestor         |        | 
-| Colaborador    |     |
+| Lider         |  Borja      | 
+| Secretaria    |  Elsa   |
 |  Desarrollador |      |
 | Analista       |    |
 |                | |
