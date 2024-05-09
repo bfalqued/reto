@@ -161,8 +161,6 @@ https://github.com/bfalqued/reto/blob/rama-elsa/Base%20de%20Datos/Scrip
 ### Estructura de la pagina web
 ***
 
-
-
 La estructura de la pagina web sigue un diseño minimalista y funcional, con un encabezado fijo que incluye el logotipo de la instuticion escolar y un menu de navegacion para acceder facilmente a los diferentes apartados. 
 Se ha implementado un menu lateral despegable para una mejor experiencia de usuario en dispositivos moviles 
 
@@ -198,3 +196,11 @@ En base a la aplicacion que hemos realizado
 ***
 
 [![Diagrama-de-clases-pdf-P-gina-1-drawio.png](https://i.postimg.cc/VsqdGxM8/Diagrama-de-clases-pdf-P-gina-1-drawio.png)](https://postimg.cc/t7gq7m2S)
+***
+
+| Tecnologias utilizadas   | Asociado a: |
+|----------------|-------------------|
+| Visual Studio | Pagina web |
+| Mysql Workbench | Para realizar tablas  |
+| NetBeans | Programar la interfaz   |
+
