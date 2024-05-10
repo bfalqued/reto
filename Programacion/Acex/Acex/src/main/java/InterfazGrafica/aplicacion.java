@@ -60,7 +60,9 @@ public class aplicacion extends javax.swing.JFrame {
     private DepartamentoDAOImp departamentoDAO;
     private GrupoDAOImp grupoDAO;
     private Interfaz interfaz;
-    Calendar calendar = Calendar.getInstance();
+    private Calendar calendar = Calendar.getInstance();
+    private List<String> listaprofesoresresponsablesseleccionados;
+    private List<String> listaprofesoresparticipantesseleccionados;
 
     public aplicacion() {
         initComponents();
@@ -84,10 +86,18 @@ public class aplicacion extends javax.swing.JFrame {
         this.setVisible(true);
         Mapacursosselecionados = new HashMap<>();
         Mapagruposselecionados = new HashMap<>();
+        listaprofesoresresponsablesseleccionados=new ArrayList<String>();
+        listaprofesoresparticipantesseleccionados=new ArrayList<String>();
         panelcomentarios.setVisible(false);
+        //limitar el número de caracteres del título
         setDocumentfilter(cuadrotitulosolicitud, 150);
-
     }
+
+    public void setInterfaz(Interfaz interfaz) {
+        this.interfaz = interfaz;
+    }
+    
+    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -136,12 +146,12 @@ public class aplicacion extends javax.swing.JFrame {
         cerrarprofesoresresponsables = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         listaprofesoresresponsables = new javax.swing.JList<>();
-        jButton2 = new javax.swing.JButton();
+        guardarprofesoresresponsables = new javax.swing.JButton();
         panelcomentarios = new javax.swing.JPanel();
         jScrollPane8 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jScrollPane9 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        comentarioalojamiento = new javax.swing.JTextArea();
         jScrollPane10 = new javax.swing.JScrollPane();
         jTextArea3 = new javax.swing.JTextArea();
         jLabel7 = new javax.swing.JLabel();
@@ -200,7 +210,6 @@ public class aplicacion extends javax.swing.JFrame {
         jTable4 = new javax.swing.JTable();
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Solicitudes aprobadas");
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconocerrar30x30.png"))); // NOI18N
@@ -263,7 +272,6 @@ public class aplicacion extends javax.swing.JFrame {
         solicitudesdenegadas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Solicitudes denegadas");
         solicitudesdenegadas.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 210, 50));
 
@@ -318,7 +326,6 @@ public class aplicacion extends javax.swing.JFrame {
         solicitudespendientes.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Solicitudes pendientes");
         solicitudespendientes.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 210, 50));
 
@@ -389,7 +396,6 @@ public class aplicacion extends javax.swing.JFrame {
         gruposparticipantes.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         titulogruposparticipantes.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        titulogruposparticipantes.setForeground(new java.awt.Color(0, 0, 0));
         titulogruposparticipantes.setText("Grupos participantes");
         gruposparticipantes.add(titulogruposparticipantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 180, 40));
 
@@ -406,7 +412,6 @@ public class aplicacion extends javax.swing.JFrame {
 
         gruposparticipantes.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 480, 280));
 
-        guardargruposparticipantes.setForeground(new java.awt.Color(0, 0, 0));
         guardargruposparticipantes.setText("Guardar");
         guardargruposparticipantes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -426,7 +431,6 @@ public class aplicacion extends javax.swing.JFrame {
         cursosparticipantes.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         titulocursosparticipantes.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        titulocursosparticipantes.setForeground(new java.awt.Color(0, 0, 0));
         titulocursosparticipantes.setText("Cursos participantes");
         cursosparticipantes.add(titulocursosparticipantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 180, 40));
 
@@ -443,7 +447,6 @@ public class aplicacion extends javax.swing.JFrame {
 
         cursosparticipantes.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 480, 280));
 
-        guardarcursosparticipantes.setForeground(new java.awt.Color(0, 0, 0));
         guardarcursosparticipantes.setText("Guardar");
         guardarcursosparticipantes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -462,7 +465,6 @@ public class aplicacion extends javax.swing.JFrame {
         profesoresparticipantes.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tituloprofesoresparticipantes.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        tituloprofesoresparticipantes.setForeground(new java.awt.Color(0, 0, 0));
         tituloprofesoresparticipantes.setText("Profesores participantes");
         profesoresparticipantes.add(tituloprofesoresparticipantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 360, 30));
 
@@ -479,6 +481,11 @@ public class aplicacion extends javax.swing.JFrame {
         profesoresparticipantes.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 500, 280));
 
         guardarprofesoresparticipantes.setText("Guardar");
+        guardarprofesoresparticipantes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                guardarprofesoresparticipantesMouseClicked(evt);
+            }
+        });
         profesoresparticipantes.add(guardarprofesoresparticipantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 330, 130, 40));
 
         getContentPane().add(profesoresparticipantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, -1, -1));
@@ -487,7 +494,6 @@ public class aplicacion extends javax.swing.JFrame {
         profesoresresponsables.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tituloprofesoresresponsables.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        tituloprofesoresresponsables.setForeground(new java.awt.Color(0, 0, 0));
         tituloprofesoresresponsables.setText("Profesores responsables");
         profesoresresponsables.add(tituloprofesoresresponsables, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 360, 40));
 
@@ -504,14 +510,18 @@ public class aplicacion extends javax.swing.JFrame {
 
         profesoresresponsables.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 480, 280));
 
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
-        jButton2.setText("Guardar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+        guardarprofesoresresponsables.setText("Guardar");
+        guardarprofesoresresponsables.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                guardarprofesoresresponsablesMouseClicked(evt);
             }
         });
-        profesoresresponsables.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 340, 130, 30));
+        guardarprofesoresresponsables.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                guardarprofesoresresponsablesActionPerformed(evt);
+            }
+        });
+        profesoresresponsables.add(guardarprofesoresresponsables, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 340, 130, 30));
 
         getContentPane().add(profesoresresponsables, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, 550, 380));
 
@@ -523,9 +533,11 @@ public class aplicacion extends javax.swing.JFrame {
 
         panelcomentarios.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 740, 120));
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane9.setViewportView(jTextArea2);
+        comentarioalojamiento.setColumns(20);
+        comentarioalojamiento.setRows(5);
+        comentarioalojamiento.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        comentarioalojamiento.setName(""); // NOI18N
+        jScrollPane9.setViewportView(comentarioalojamiento);
 
         panelcomentarios.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 740, 120));
 
@@ -551,7 +563,6 @@ public class aplicacion extends javax.swing.JFrame {
         panelcomentarios.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 350, 50));
 
         jButton4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(0, 0, 0));
         jButton4.setText("Guardar");
         panelcomentarios.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 560, 210, 50));
 
@@ -592,7 +603,6 @@ public class aplicacion extends javax.swing.JFrame {
         solicitud.add(departamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 130, 40));
 
         elegirdepartamento.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        elegirdepartamento.setForeground(new java.awt.Color(0, 0, 0));
         elegirdepartamento.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 elegirdepartamentoMouseClicked(evt);
@@ -611,7 +621,6 @@ public class aplicacion extends javax.swing.JFrame {
         solicitud.add(Tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, -1, -1));
 
         cajatipo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        cajatipo.setForeground(new java.awt.Color(0, 0, 0));
         cajatipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Extraescolar", "Complementaria" }));
         solicitud.add(cajatipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 180, 200, 30));
 
@@ -621,7 +630,6 @@ public class aplicacion extends javax.swing.JFrame {
         solicitud.add(actividadprevista, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, 160, 40));
 
         cajaprevista.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        cajaprevista.setForeground(new java.awt.Color(0, 0, 0));
         cajaprevista.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Si", "No" }));
         solicitud.add(cajaprevista, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, -1, -1));
 
@@ -713,12 +721,10 @@ public class aplicacion extends javax.swing.JFrame {
         solicitud.add(transporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, 120, 40));
 
         cajatransporte.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        cajatransporte.setForeground(new java.awt.Color(0, 0, 0));
         cajatransporte.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Si", "No" }));
         solicitud.add(cajatransporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 390, -1, -1));
 
         botonprofesoresresponsables.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        botonprofesoresresponsables.setForeground(new java.awt.Color(0, 0, 0));
         botonprofesoresresponsables.setText("Profesores responsables");
         botonprofesoresresponsables.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -728,7 +734,6 @@ public class aplicacion extends javax.swing.JFrame {
         solicitud.add(botonprofesoresresponsables, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 440, -1, 40));
 
         botonprofesoresparticipantes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        botonprofesoresparticipantes.setForeground(new java.awt.Color(0, 0, 0));
         botonprofesoresparticipantes.setText("Profesores participantes");
         botonprofesoresparticipantes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -769,7 +774,6 @@ public class aplicacion extends javax.swing.JFrame {
         solicitud.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 560, -1, -1));
 
         cajaalojamiento.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        cajaalojamiento.setForeground(new java.awt.Color(0, 0, 0));
         cajaalojamiento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Si", "No" }));
         solicitud.add(cajaalojamiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 560, -1, -1));
 
@@ -779,7 +783,6 @@ public class aplicacion extends javax.swing.JFrame {
         solicitud.add(comentarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 610, 120, 40));
 
         botoncomentar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        botoncomentar.setForeground(new java.awt.Color(0, 0, 0));
         botoncomentar.setText("Comentar");
         botoncomentar.setActionCommand("");
         botoncomentar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -790,7 +793,6 @@ public class aplicacion extends javax.swing.JFrame {
         solicitud.add(botoncomentar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 610, 180, 40));
 
         botonenviarsolicitud.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        botonenviarsolicitud.setForeground(new java.awt.Color(0, 0, 0));
         botonenviarsolicitud.setText("Enviar Solicitud");
         botonenviarsolicitud.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1032,9 +1034,9 @@ public class aplicacion extends javax.swing.JFrame {
         this.setVisible(true);
     }//GEN-LAST:event_botonprofesoresresponsablesMouseClicked
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void guardarprofesoresresponsablesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarprofesoresresponsablesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_guardarprofesoresresponsablesActionPerformed
 
     private void botonprofesoresparticipantesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonprofesoresparticipantesMouseClicked
         profesoresparticipantes.setVisible(true);
@@ -1145,6 +1147,7 @@ public class aplicacion extends javax.swing.JFrame {
             }
         }
         JOptionPane.showMessageDialog(null, "Selecciones guardadas con éxito:\n" + Mapacursosselecionados);
+        cursosparticipantes.setVisible(false);
     }//GEN-LAST:event_guardarcursosparticipantesMouseClicked
 
     private void guardargruposparticipantesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_guardargruposparticipantesMouseClicked
@@ -1162,6 +1165,7 @@ public class aplicacion extends javax.swing.JFrame {
             }
         }
         JOptionPane.showMessageDialog(null, "Selecciones guardadas con éxito:\n" + Mapacursosselecionados);
+        gruposparticipantes.setVisible(false);
     }//GEN-LAST:event_guardargruposparticipantesMouseClicked
 
     private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
@@ -1185,8 +1189,9 @@ public class aplicacion extends javax.swing.JFrame {
     }//GEN-LAST:event_botonenviarsolicitudActionPerformed
 
     private void botonenviarsolicitudMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonenviarsolicitudMouseClicked
+       
         if (validadatos()) {
-            Profesor profesor= interfaz.getProfesor();
+            //Profesor profesor= interfaz.getProfesor();
             System.out.println("funciona");
         }
 
@@ -1196,6 +1201,16 @@ public class aplicacion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cuadrotitulosolicitudActionPerformed
 
+    private void guardarprofesoresresponsablesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_guardarprofesoresresponsablesMouseClicked
+        listaprofesoresresponsablesseleccionados= listaprofesoresresponsables.getSelectedValuesList();
+        profesoresresponsables.setVisible(false);
+    }//GEN-LAST:event_guardarprofesoresresponsablesMouseClicked
+
+    private void guardarprofesoresparticipantesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_guardarprofesoresparticipantesMouseClicked
+        listaprofesoresparticipantesseleccionados= listaprofesoresparticipantes.getSelectedValuesList();
+        profesoresparticipantes.setVisible(false);
+    }//GEN-LAST:event_guardarprofesoresparticipantesMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1203,10 +1218,15 @@ public class aplicacion extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new aplicacion().setVisible(true);
             }
         });
+    }
+    
+    private Profesor usuarioLogin(){
+            return interfaz.getProfesorLogin();
     }
 
     private boolean validadatos() {
@@ -1220,11 +1240,11 @@ public class aplicacion extends javax.swing.JFrame {
             return false;
         } //controlar la introducción del tipo de actividad
         else if (cajatipo.getSelectedIndex() < 0) {
-            JOptionPane.showMessageDialog(null, "Seleciona un tipo de actividad");
+            JOptionPane.showMessageDialog(null, "Selecciona un tipo de actividad");
             return false;
         } //controlar la introducción de si está prevista o no
         else if (cajaprevista.getSelectedIndex() < 0) {
-            JOptionPane.showMessageDialog(null, "Seleciona si está prevista o no");
+            JOptionPane.showMessageDialog(null, "Selecciona si está prevista o no");
             return false;
         } //controlar la introducción de las fechas de inicio y de fin
         else if (obtenerLocalDateTimeDesdeSpinners(hini, fini).isBefore(LocalDateTime.now())) {
@@ -1237,11 +1257,23 @@ public class aplicacion extends javax.swing.JFrame {
         } 
         //controlar la introducción de si se necesita transporte o no
         else if (cajatransporte.getSelectedIndex() < 0) {
-            JOptionPane.showMessageDialog(null, "Seleciona si se necesita transporte o no");
+            JOptionPane.showMessageDialog(null, "Selecciona si se necesita transporte o no");
             return false;
         } //controlar la introducción de cursos o grupos participantes
         else if (Mapacursosselecionados.isEmpty() && Mapagruposselecionados.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Seleciona los cursos o grupos participantes");
+            JOptionPane.showMessageDialog(null, "Selecciona los cursos o grupos participantes");
+            return false;
+        }
+//        else if (listaprofesoresresponsablesseleccionados.isEmpty()) {
+//            JOptionPane.showMessageDialog(null, "Selecciona los profesores responsables");
+//            return false;
+//        }
+//        else if (listaprofesoresparticipantesseleccionados.isEmpty()) {
+//            JOptionPane.showMessageDialog(null, "Selecciona los profesores responsables");
+//            return false;
+//        }
+        else if (cajaalojamiento.getSelectedIndex() < 0) {
+            JOptionPane.showMessageDialog(null, "Selecciona si se necesita alojamiento o no");
             return false;
         }
 
@@ -1281,6 +1313,11 @@ public class aplicacion extends javax.swing.JFrame {
         DocumentFilter filter = limitaCaracteres(caracteres);
         ((PlainDocument) campo.getDocument()).setDocumentFilter(filter);
     }
+    
+    private void setDocumentfilterTextArea(JTextArea area, int caracteres) {
+    DocumentFilter filter = limitaCaracteres(caracteres);
+    ((PlainDocument) area.getDocument()).setDocumentFilter(filter);
+}
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1309,6 +1346,7 @@ public class aplicacion extends javax.swing.JFrame {
     private javax.swing.JLabel cerrarprofesoresparticipantes;
     private javax.swing.JLabel cerrarprofesoresresponsables;
     private javax.swing.JLabel cerrarsoli;
+    private javax.swing.JTextArea comentarioalojamiento;
     private javax.swing.JLabel comentarios;
     private javax.swing.JLabel crearsolicitud;
     private javax.swing.JFileChooser cuadroimportar;
@@ -1329,6 +1367,7 @@ public class aplicacion extends javax.swing.JFrame {
     private javax.swing.JButton guardarcursosparticipantes;
     private javax.swing.JButton guardargruposparticipantes;
     private javax.swing.JButton guardarprofesoresparticipantes;
+    private javax.swing.JButton guardarprofesoresresponsables;
     private javax.swing.JSpinner hfin;
     private javax.swing.JSpinner hini;
     private javax.swing.JLabel horafin;
@@ -1337,7 +1376,6 @@ public class aplicacion extends javax.swing.JFrame {
     private javax.swing.JLabel horario1;
     private javax.swing.JLabel iconoimportardatos;
     private javax.swing.JPanel importar;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1366,7 +1404,6 @@ public class aplicacion extends javax.swing.JFrame {
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea3;
     private javax.swing.JList<String> listacursosparticipantes;
     private javax.swing.JList<String> listagruposparticipantes;

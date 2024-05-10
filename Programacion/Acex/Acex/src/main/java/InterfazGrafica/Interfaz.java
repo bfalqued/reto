@@ -12,21 +12,19 @@ import javax.swing.JOptionPane;
  * @author Borja
  */
 public class Interfaz extends javax.swing.JFrame {
-
+    private aplicacion app;
+    ProfesorDAOImp p1 ;
     private Profesor profesor;
     
     public Interfaz() {
         initComponents();
-
+        
     }
 
-    public Profesor getProfesor() {
+    public Profesor getProfesorLogin() {
         return profesor;
     }
 
-    public void setProfesor(Profesor profesor) {
-        this.profesor = profesor;
-    }
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -146,7 +144,7 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_iconocerrarMouseClicked
 
     private void botonloginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonloginMouseClicked
-        ProfesorDAOImp p1 = new ProfesorDAOImp();
+        p1 = new ProfesorDAOImp();
         botonlogin.addActionListener((java.awt.event.ActionEvent e) -> {
             String correo = introducecorreo.getText();
             String contraseña = introducecontrasena.getText();
@@ -156,8 +154,8 @@ public class Interfaz extends javax.swing.JFrame {
                 // Las credenciales son correctas, puedes permitir el acceso
                 JOptionPane.showMessageDialog(null, "¡Bienvenido!");
                 // Aquí puedes abrir la siguiente ventana o realizar alguna acción adicional
-                aplicacion aplicacion = new aplicacion();
-                aplicacion.setVisible(true);
+                
+                app.setVisible(true);
                 this.dispose();
             } else {
                 // Las credenciales son incorrectas
@@ -209,6 +207,7 @@ public class Interfaz extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new Interfaz().setVisible(true);
             }

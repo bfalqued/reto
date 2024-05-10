@@ -48,9 +48,9 @@ public class ProfesorDAOImp implements Repositorio<Profesor> {
     public void guardar(Profesor profesor) {
         String sql = null;
         if (profesor.getId_profesor() > 0) {
-            sql = "UPDATE profesor SET nombre=?,apellido=?,departamento=?,correo=?,contraseña=?,perfil=?,dni=?,activo=? WHERE id_profesor=?";
+            sql = "UPDATE profesor SET nombre=?,apellido=?,departamento=?,correo=?,contrasena=?,perfil=?,dni=?,activo=? WHERE id_profesor=?";
         } else {
-            sql = "INSERT INTO profesor(nombre,apellido,departamento,correo,contraseña,perfil,dni,activo) VALUES (?,?,?,?,?,?,?,?)";
+            sql = "INSERT INTO profesor(nombre,apellido,departamento,correo,contrasena,perfil,dni,activo) VALUES (?,?,?,?,?,?,?,?)";
         }
         try (PreparedStatement stmt = getConnection().prepareStatement(sql);) {
             if (profesor.getId_profesor() > 0) {
@@ -97,7 +97,7 @@ public class ProfesorDAOImp implements Repositorio<Profesor> {
     @Override
     public Profesor porId(int id_profesor) {
         Profesor profesor = null;
-        String sql = "SELECT id_profesor,nombre,apellido,departamento,correo,contraseña,perfil,dni,activo FROM profesor WHERE id_profesor=?";
+        String sql = "SELECT id_profesor,nombre,apellido,departamento,correo,contrasena,perfil,dni,activo FROM profesor WHERE id_profesor=?";
         try (PreparedStatement stmt = getConnection().prepareStatement(sql);) {
             stmt.setInt(1, id_profesor);
             try (ResultSet rs = stmt.executeQuery();) {
