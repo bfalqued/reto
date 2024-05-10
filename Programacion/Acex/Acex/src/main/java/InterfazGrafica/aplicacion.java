@@ -53,8 +53,14 @@ import javax.swing.text.PlainDocument;
  */
 public class aplicacion extends javax.swing.JFrame {
 
+    //Déclaración de variables
     private Map<String, Integer> Mapacursosselecionados;
     private Map<String, Integer> Mapagruposselecionados;
+    private ProfesorDAOImp profesorDAO;
+    private DepartamentoDAOImp departamentoDAO;
+    private GrupoDAOImp grupoDAO;
+    private Interfaz interfaz;
+    Calendar calendar = Calendar.getInstance();
 
     public aplicacion() {
         initComponents();
@@ -80,7 +86,7 @@ public class aplicacion extends javax.swing.JFrame {
         Mapagruposselecionados = new HashMap<>();
         panelcomentarios.setVisible(false);
         setDocumentfilter(cuadrotitulosolicitud, 150);
-        
+
     }
 
     @SuppressWarnings("unchecked")
@@ -929,11 +935,11 @@ public class aplicacion extends javax.swing.JFrame {
     }//GEN-LAST:event_cerrarMouseClicked
 
     private void crearsolicitudMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearsolicitudMouseClicked
-  
-        DepartamentoDAOImp departamentoDAO = new DepartamentoDAOImp();
-        List <Departamento> listadepartamentos = departamentoDAO.listar();
-        List <String> listanombresdepartamentos = departamentoDAO.nombres(listadepartamentos);
-        for(String valor:listanombresdepartamentos){
+
+        departamentoDAO = new DepartamentoDAOImp();
+        List<Departamento> listadepartamentos = departamentoDAO.listar();
+        List<String> listanombresdepartamentos = departamentoDAO.nombres(listadepartamentos);
+        for (String valor : listanombresdepartamentos) {
             elegirdepartamento.addItem(valor);
         }
         elegirdepartamento.setSelectedIndex(-1);
@@ -943,7 +949,7 @@ public class aplicacion extends javax.swing.JFrame {
         elegircursogrupo.setSelectedIndex(-1);
         cajaalojamiento.setSelectedIndex(-1);
         solicitud.setVisible(true);
-        
+
     }//GEN-LAST:event_crearsolicitudMouseClicked
 
     private void iconoimportardatosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iconoimportardatosMouseClicked
@@ -1011,7 +1017,7 @@ public class aplicacion extends javax.swing.JFrame {
 
         profesoresresponsables.setVisible(true);
 
-        ProfesorDAOImp profesorDAO = new ProfesorDAOImp();
+        profesorDAO = new ProfesorDAOImp();
         // Obtienes la lista de profesores de la base de datos
         List<Profesor> profesores = profesorDAO.listar();
         // Creas un nuevo modelo para la JList
@@ -1033,7 +1039,7 @@ public class aplicacion extends javax.swing.JFrame {
     private void botonprofesoresparticipantesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonprofesoresparticipantesMouseClicked
         profesoresparticipantes.setVisible(true);
 
-        ProfesorDAOImp profesorDAO = new ProfesorDAOImp();
+        profesorDAO = new ProfesorDAOImp();
         // Obtienes la lista de profesores de la base de datos
         List<Profesor> profesores = profesorDAO.listar();
         // Creas un nuevo modelo para la JList
@@ -1171,7 +1177,7 @@ public class aplicacion extends javax.swing.JFrame {
     }//GEN-LAST:event_elegirdepartamentoActionPerformed
 
     private void elegirdepartamentoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_elegirdepartamentoMouseClicked
-        
+
     }//GEN-LAST:event_elegirdepartamentoMouseClicked
 
     private void botonenviarsolicitudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonenviarsolicitudActionPerformed
@@ -1179,10 +1185,11 @@ public class aplicacion extends javax.swing.JFrame {
     }//GEN-LAST:event_botonenviarsolicitudActionPerformed
 
     private void botonenviarsolicitudMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonenviarsolicitudMouseClicked
-        if(validadatos()){
+        if (validadatos()) {
+            Profesor profesor= interfaz.getProfesor();
             System.out.println("funciona");
         }
-        
+
     }//GEN-LAST:event_botonenviarsolicitudMouseClicked
 
     private void cuadrotitulosolicitudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cuadrotitulosolicitudActionPerformed
@@ -1201,34 +1208,48 @@ public class aplicacion extends javax.swing.JFrame {
             }
         });
     }
-    private boolean validadatos(){
-        if(!cuadrotitulosolicitud.getText().matches("^([A-Z0-9Ñ][a-záéíóúñºª]*)(\\s[A-Za-z0-9ñÑºªáéíóú]*)*$")){
-           JOptionPane.showMessageDialog(null, "Ingresa un título válido");
-           return false;
-        }else if(elegirdepartamento.getSelectedIndex()<0){
+
+    private boolean validadatos() {
+        //controlar la introducción del título
+        if (!cuadrotitulosolicitud.getText().matches("^([A-Z0-9Ñ][a-záéíóúñºª]*)(\\s[A-Za-z0-9ñÑºªáéíóú]*)*$")) {
+            JOptionPane.showMessageDialog(null, "Ingresa un título válido");
+            return false;
+        } //controlar la introducción de departamento
+        else if (elegirdepartamento.getSelectedIndex() < 0) {
             JOptionPane.showMessageDialog(null, "Selecciona un departamento");
             return false;
-        }else if(cajatipo.getSelectedIndex()<0){
+        } //controlar la introducción del tipo de actividad
+        else if (cajatipo.getSelectedIndex() < 0) {
             JOptionPane.showMessageDialog(null, "Seleciona un tipo de actividad");
             return false;
-        }else if(cajaprevista.getSelectedIndex()<0){
+        } //controlar la introducción de si está prevista o no
+        else if (cajaprevista.getSelectedIndex() < 0) {
             JOptionPane.showMessageDialog(null, "Seleciona si está prevista o no");
             return false;
-        }else if(obtenerLocalDateTimeDesdeSpinners(hini,fini).isBefore(LocalDateTime.now())){
+        } //controlar la introducción de las fechas de inicio y de fin
+        else if (obtenerLocalDateTimeDesdeSpinners(hini, fini).isBefore(LocalDateTime.now())) {
             JOptionPane.showMessageDialog(null, "La fecha inicial tiene que ser posterior a la fecha actual");
-                   return false;
-        }
-        else if(obtenerLocalDateTimeDesdeSpinners(hfin,ffin).isBefore(obtenerLocalDateTimeDesdeSpinners(hini,fini))){
-                JOptionPane.showMessageDialog(null, "La fecha final tiene que ser posterior a la fecha inicial");
-                   return false;
-            }else if(cajatransporte.getSelectedIndex()<0){
+            return false;
+        } //controlar la introducción de las fechas de inicio y de fin
+        else if (obtenerLocalDateTimeDesdeSpinners(hfin, ffin).isBefore(obtenerLocalDateTimeDesdeSpinners(hini, fini))) {
+            JOptionPane.showMessageDialog(null, "La fecha final tiene que ser posterior a la fecha inicial");
+            return false;
+        } 
+        //controlar la introducción de si se necesita transporte o no
+        else if (cajatransporte.getSelectedIndex() < 0) {
             JOptionPane.showMessageDialog(null, "Seleciona si se necesita transporte o no");
             return false;
+        } //controlar la introducción de cursos o grupos participantes
+        else if (Mapacursosselecionados.isEmpty() && Mapagruposselecionados.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Seleciona los cursos o grupos participantes");
+            return false;
         }
-    
-        return true; 
+
+        return true;
     }
-        private  LocalDateTime obtenerLocalDateTimeDesdeSpinners(JSpinner horaSpinner, JSpinner fechaSpinner) {
+
+    //métodos útiles
+    private LocalDateTime obtenerLocalDateTimeDesdeSpinners(JSpinner horaSpinner, JSpinner fechaSpinner) {
         // Obtener la hora y la fecha seleccionadas de los Spinners como objetos Date
         Date horaSeleccionada = (Date) horaSpinner.getValue();
         Date fechaSeleccionada = (Date) fechaSpinner.getValue();
@@ -1240,8 +1261,8 @@ public class aplicacion extends javax.swing.JFrame {
         // Combinar la hora y la fecha en un LocalDateTime
         return LocalDateTime.of(localDate, localTime);
     }
-           
-    public  DocumentFilter limitaCaracteres(int numCaracteres) {
+
+    public DocumentFilter limitaCaracteres(int numCaracteres) {
         DocumentFilter filter = new DocumentFilter() {
             @Override
             public void replace(FilterBypass fb, int offset, int length, String text, AttributeSet attrs)
@@ -1255,13 +1276,13 @@ public class aplicacion extends javax.swing.JFrame {
         };
         return filter;
     }
+
     private void setDocumentfilter(JTextField campo, int caracteres) {
         DocumentFilter filter = limitaCaracteres(caracteres);
         ((PlainDocument) campo.getDocument()).setDocumentFilter(filter);
     }
-    
-    
-    
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Tipo;
     private javax.swing.JLabel actividadprevista;
