@@ -21,7 +21,7 @@ public class DepartamentoDAOImp implements Repositorio <Departamento>{
     @Override
     public List<Departamento> listar() {
         List<Departamento> departamentos = new ArrayList<>();
-        try (Statement stmt = getConnection().createStatement(); ResultSet rs = stmt.executeQuery("SELECT id_departamento,nombre,jefe,codigo_departamento FROM departamento");) {
+        try (Statement stmt = getConnection().createStatement(); ResultSet rs = stmt.executeQuery("SELECT id_depart,nombre,jefe,codigo_departamento FROM departamento");) {
             while (rs.next()) {
                 Departamento departamento = crearDepartamento(rs);
                 if (!departamentos.add(departamento)) {
@@ -41,7 +41,7 @@ public class DepartamentoDAOImp implements Repositorio <Departamento>{
     public void guardar(Departamento departamento) {
         String sql = null;
         if (departamento.getId_departamento() > 0) {
-            sql = "UPDATE departamento SET nombre=?,jefe=?,codigo_departamento=? WHERE id_departamento=?";
+            sql = "UPDATE departamento SET nombre=?,jefe=?,codigo_departamento=? WHERE id_depart=?";
         } else {
             sql = "INSERT INTO departamento(nombre,jefe,codigo_departamento) VALUES (?,?,?)";
         }
@@ -66,7 +66,7 @@ public class DepartamentoDAOImp implements Repositorio <Departamento>{
 
     @Override
     public void eliminar(int id_departamento) {
-        String sql = "DELETE FROM departamento WHERE id_departamento=?";
+        String sql = "DELETE FROM departamento WHERE id_depart=?";
         try (PreparedStatement stmt = getConnection().prepareStatement(sql);) {
             stmt.setInt(1, id_departamento);
             int salida = stmt.executeUpdate();
@@ -85,7 +85,7 @@ public class DepartamentoDAOImp implements Repositorio <Departamento>{
     @Override
     public Departamento porId(int id_departamento) {
         Departamento departamento = null;
-        String sql = "SELECT id_departamento,nombre,jefe,codigo_departamento FROM departamento WHERE id_departamento=?";
+        String sql = "SELECT id_depart,nombre,jefe,codigo_departamento FROM departamento WHERE id_depart=?";
         try (PreparedStatement stmt = getConnection().prepareStatement(sql);) {
             stmt.setInt(1, id_departamento);
             try (ResultSet rs = stmt.executeQuery();) {
@@ -99,9 +99,18 @@ public class DepartamentoDAOImp implements Repositorio <Departamento>{
         }
         return departamento;
     }
+    public List<String> nombres(List<Departamento> departamentos) {
+        List<String> nombres = new ArrayList<>();
+        for (Departamento departamento : departamentos) {
+            String cadena = "";
+            cadena += departamento.getNombre();          
+            nombres.add(cadena);
+        }
+        return nombres;
+    }
     private Departamento crearDepartamento (final ResultSet rs)throws SQLException{
         return new Departamento(
-        rs.getInt("id_departamento"),rs.getString("nombre"),rs.getInt("jefe"),rs.getString("codigo_departamento"));
+        rs.getInt("id_depart"),rs.getString("nombre"),rs.getInt("jefe"),rs.getString("codigo_departamento"));
     }
     
 }

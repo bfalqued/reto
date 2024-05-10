@@ -8,12 +8,14 @@ Clases\ProfesorDAOImp.class
 Clases\Funciones.class
 InterfazGrafica\aplicacion$12.class
 Clases\AccesoBaseDatos$AccesoBaseDatosHolder.class
+InterfazGrafica\aplicacion$35.class
 InterfazGrafica\Interfaz$6.class
 InterfazGrafica\aplicacion$32.class
 InterfazGrafica\aplicacion$22.class
 InterfazGrafica\aplicacion$25.class
 Clases\Actividad_ProgramadaDAOImp.class
 InterfazGrafica\aplicacion$8.class
+InterfazGrafica\aplicacion$33.class
 InterfazGrafica\aplicacion$4.class
 Clases\EstadoActividad.class
 Clases\Etapa.class
@@ -26,6 +28,7 @@ Clases\DepartamentoDAOImp.class
 InterfazGrafica\aplicacion$1.class
 InterfazGrafica\aplicacion$21.class
 InterfazGrafica\aplicacion$7.class
+InterfazGrafica\aplicacion$36.class
 Clases\CargarDatos.class
 Clases\Foto.class
 Clases\CursoDAOImp.class
@@ -33,6 +36,7 @@ InterfazGrafica\aplicacion$16.class
 Clases\Jlabel.class
 InterfazGrafica\aplicacion$14.class
 InterfazGrafica\aplicacion$24.class
+InterfazGrafica\aplicacion$34.class
 Clases\ImageIcon.class
 Clases\Repositorio.class
 Clases\Actividad_Programada.class
@@ -43,6 +47,7 @@ InterfazGrafica\Main.class
 Clases\TipoActividad.class
 InterfazGrafica\aplicacion$27.class
 InterfazGrafica\aplicacion$20.class
+InterfazGrafica\aplicacion$37.class
 InterfazGrafica\aplicacion$10.class
 InterfazGrafica\aplicacion$17.class
 InterfazGrafica\aplicacion$30.class
@@ -57,6 +62,7 @@ InterfazGrafica\aplicacion$15.class
 Clases\FotoDAOImp.class
 Clases\Grupo.class
 InterfazGrafica\aplicacion$9.class
+InterfazGrafica\aplicacion$38.class
 InterfazGrafica\aplicacion$2.class
 Clases\Transporte.class
 InterfazGrafica\aplicacion$18.class

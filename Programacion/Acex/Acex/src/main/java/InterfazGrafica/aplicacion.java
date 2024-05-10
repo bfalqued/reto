@@ -3,6 +3,8 @@ package InterfazGrafica;
 import Clases.CargarDatos;
 import Clases.Curso;
 import Clases.CursoDAOImp;
+import Clases.Departamento;
+import Clases.DepartamentoDAOImp;
 import Clases.Grupo;
 import Clases.GrupoDAOImp;
 import Clases.Profesor;
@@ -33,9 +35,17 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import java.util.List;
 import javax.swing.ListSelectionModel;
 import java.awt.*;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.ZoneId;
 import java.util.HashMap;
 import java.util.Map;
 import javax.swing.*;
+import javax.swing.text.AttributeSet;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.DocumentFilter;
+import javax.swing.text.PlainDocument;
 
 /**
  *
@@ -55,7 +65,7 @@ public class aplicacion extends javax.swing.JFrame {
         menu.setBackground(negrotransparente);
         solicitud.setBackground(negrotransparente);
         Color gristransparente = new Color(60, 63, 65, 128);
-        borde.setBackground(gristransparente);
+        fondosolicitud.setBackground(gristransparente);
         solicitud.setVisible(false);
         importar.setVisible(false);
         FileNameExtensionFilter filter = new FileNameExtensionFilter("CSV files", "csv");
@@ -69,7 +79,8 @@ public class aplicacion extends javax.swing.JFrame {
         Mapacursosselecionados = new HashMap<>();
         Mapagruposselecionados = new HashMap<>();
         panelcomentarios.setVisible(false);
-
+        setDocumentfilter(cuadrotitulosolicitud, 150);
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -135,9 +146,9 @@ public class aplicacion extends javax.swing.JFrame {
         solicitud = new javax.swing.JPanel();
         encabezado = new javax.swing.JLabel();
         titulo = new javax.swing.JLabel();
-        cuadrotitulo1 = new javax.swing.JTextField();
+        cuadrotitulosolicitud = new javax.swing.JTextField();
         departamento = new javax.swing.JLabel();
-        cuadrodepartamento = new javax.swing.JTextField();
+        elegirdepartamento = new javax.swing.JComboBox<>();
         Tipo = new javax.swing.JLabel();
         cajatipo = new javax.swing.JComboBox<>();
         actividadprevista = new javax.swing.JLabel();
@@ -153,36 +164,34 @@ public class aplicacion extends javax.swing.JFrame {
         fechafin = new javax.swing.JLabel();
         ffin = new JSpinner(new SpinnerDateModel());
         transporte = new javax.swing.JLabel();
-        andando = new java.awt.Checkbox();
-        autobus = new java.awt.Checkbox();
-        bicicleta = new java.awt.Checkbox();
-        taxi = new java.awt.Checkbox();
-        tren = new java.awt.Checkbox();
-        barco = new java.awt.Checkbox();
-        avion = new java.awt.Checkbox();
-        mediostransporte = new javax.swing.JLabel();
+        cajatransporte = new javax.swing.JComboBox<>();
         botonprofesoresresponsables = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        botonprofesoresparticipantes = new javax.swing.JButton();
         elegircursogrupo = new javax.swing.JComboBox<>();
         alumnosselecionar = new javax.swing.JButton();
         alumnos = new javax.swing.JLabel();
-        requisitobus = new javax.swing.JLabel();
         profesores = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         cajaalojamiento = new javax.swing.JComboBox<>();
         comentarios = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
-        borde = new javax.swing.JLabel();
+        botoncomentar = new javax.swing.JButton();
+        botonenviarsolicitud = new javax.swing.JButton();
+        fondosolicitud = new javax.swing.JLabel();
         cerrarsoli = new javax.swing.JLabel();
         menu = new javax.swing.JPanel();
         iconoimportardatos = new javax.swing.JLabel();
         crearsolicitud = new javax.swing.JLabel();
         logo = new javax.swing.JLabel();
-        gestionarsolicitudes = new javax.swing.JLabel();
-        solicitudaprobada = new javax.swing.JLabel();
-        actividadpendiente = new javax.swing.JLabel();
-        solicituddenegada = new javax.swing.JLabel();
+        botongestionarsolicitudes = new javax.swing.JLabel();
+        botonsolicitudaprobada = new javax.swing.JLabel();
+        botonactividadpendiente = new javax.swing.JLabel();
+        botonsolicituddenegada = new javax.swing.JLabel();
         fondo = new javax.swing.JLabel();
+        gestionarsolicitudes = new javax.swing.JPanel();
+        titulogestionarsolicitudes = new javax.swing.JLabel();
+        cerrargestionarsolicitudes = new javax.swing.JLabel();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        jTable4 = new javax.swing.JTable();
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
@@ -563,16 +572,32 @@ public class aplicacion extends javax.swing.JFrame {
         titulo.setText("Titulo:");
         solicitud.add(titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 70, 50));
 
-        cuadrotitulo1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        solicitud.add(cuadrotitulo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, 400, 30));
+        cuadrotitulosolicitud.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        cuadrotitulosolicitud.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cuadrotitulosolicitudActionPerformed(evt);
+            }
+        });
+        solicitud.add(cuadrotitulosolicitud, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, 400, 30));
 
         departamento.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         departamento.setForeground(new java.awt.Color(255, 255, 255));
         departamento.setText("Departamento:");
         solicitud.add(departamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 130, 40));
 
-        cuadrodepartamento.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        solicitud.add(cuadrodepartamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 140, 400, 30));
+        elegirdepartamento.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        elegirdepartamento.setForeground(new java.awt.Color(0, 0, 0));
+        elegirdepartamento.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                elegirdepartamentoMouseClicked(evt);
+            }
+        });
+        elegirdepartamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                elegirdepartamentoActionPerformed(evt);
+            }
+        });
+        solicitud.add(elegirdepartamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 140, 400, 30));
 
         Tipo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Tipo.setForeground(new java.awt.Color(255, 255, 255));
@@ -592,7 +617,7 @@ public class aplicacion extends javax.swing.JFrame {
         cajaprevista.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         cajaprevista.setForeground(new java.awt.Color(0, 0, 0));
         cajaprevista.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Si", "No" }));
-        solicitud.add(cajaprevista, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, -1, -1));
+        solicitud.add(cajaprevista, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, -1, -1));
 
         horario.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         horario.setForeground(new java.awt.Color(255, 255, 255));
@@ -605,7 +630,7 @@ public class aplicacion extends javax.swing.JFrame {
         horaini.setForeground(new java.awt.Color(255, 255, 255));
         horaini.setText("Inicio:");
         horaini.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        solicitud.add(horaini, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, 50, 50));
+        solicitud.add(horaini, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, 50, 50));
 
         hini.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
@@ -616,13 +641,13 @@ public class aplicacion extends javax.swing.JFrame {
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
-        solicitud.add(hini, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 280, 120, 30));
+        solicitud.add(hini, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, 120, 30));
 
         horafin.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         horafin.setForeground(new java.awt.Color(255, 255, 255));
         horafin.setText("Fin:");
         horafin.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        solicitud.add(horafin, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 260, 30, 50));
+        solicitud.add(horafin, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 260, 30, 50));
 
         hfin.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
@@ -633,7 +658,7 @@ public class aplicacion extends javax.swing.JFrame {
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
-        solicitud.add(hfin, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 280, 120, 30));
+        solicitud.add(hfin, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 280, 120, 30));
 
         horario1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         horario1.setForeground(new java.awt.Color(255, 255, 255));
@@ -646,7 +671,7 @@ public class aplicacion extends javax.swing.JFrame {
         fechaini.setForeground(new java.awt.Color(255, 255, 255));
         fechaini.setText("Inicio:");
         fechaini.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        solicitud.add(fechaini, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, 50, 50));
+        solicitud.add(fechaini, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 310, 50, 50));
 
         fini.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
@@ -657,13 +682,13 @@ public class aplicacion extends javax.swing.JFrame {
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
-        solicitud.add(fini, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 332, 120, 30));
+        solicitud.add(fini, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 330, 120, 30));
 
         fechafin.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         fechafin.setForeground(new java.awt.Color(255, 255, 255));
         fechafin.setText("Fin:");
         fechafin.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        solicitud.add(fechafin, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 310, 30, 50));
+        solicitud.add(fechafin, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 310, 30, 50));
 
         ffin.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
@@ -674,65 +699,17 @@ public class aplicacion extends javax.swing.JFrame {
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
-        solicitud.add(ffin, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 332, 120, 30));
+        solicitud.add(ffin, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 330, 120, 30));
 
         transporte.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         transporte.setForeground(new java.awt.Color(255, 255, 255));
         transporte.setText("Transporte/s:");
         solicitud.add(transporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, 120, 40));
 
-        andando.setBackground(new java.awt.Color(60, 63, 65));
-        andando.setForeground(new java.awt.Color(60, 63, 65));
-        andando.setLabel("prevista");
-        andando.setName(""); // NOI18N
-        andando.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                andandoMouseClicked(evt);
-            }
-        });
-        solicitud.add(andando, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 390, 20, 20));
-
-        autobus.setBackground(new java.awt.Color(60, 63, 65));
-        autobus.setForeground(new java.awt.Color(60, 63, 65));
-        autobus.setLabel("prevista");
-        autobus.setName(""); // NOI18N
-        solicitud.add(autobus, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 390, 20, 20));
-
-        bicicleta.setBackground(new java.awt.Color(60, 63, 65));
-        bicicleta.setForeground(new java.awt.Color(60, 63, 65));
-        bicicleta.setLabel("prevista");
-        bicicleta.setName(""); // NOI18N
-        solicitud.add(bicicleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 390, 20, 20));
-
-        taxi.setBackground(new java.awt.Color(60, 63, 65));
-        taxi.setForeground(new java.awt.Color(60, 63, 65));
-        taxi.setLabel("prevista");
-        taxi.setName(""); // NOI18N
-        solicitud.add(taxi, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 390, 20, 20));
-
-        tren.setBackground(new java.awt.Color(60, 63, 65));
-        tren.setForeground(new java.awt.Color(60, 63, 65));
-        tren.setLabel("prevista");
-        tren.setName(""); // NOI18N
-        solicitud.add(tren, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 390, 20, 20));
-
-        barco.setBackground(new java.awt.Color(60, 63, 65));
-        barco.setForeground(new java.awt.Color(60, 63, 65));
-        barco.setLabel("prevista");
-        barco.setName(""); // NOI18N
-        solicitud.add(barco, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 390, 20, 20));
-
-        avion.setBackground(new java.awt.Color(60, 63, 65));
-        avion.setForeground(new java.awt.Color(60, 63, 65));
-        avion.setLabel("prevista");
-        avion.setName(""); // NOI18N
-        solicitud.add(avion, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 390, 20, 20));
-
-        mediostransporte.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        mediostransporte.setForeground(new java.awt.Color(255, 255, 255));
-        mediostransporte.setText("Andando         Autobus        Bicicleta         Taxi        Tren         Barco         Avion");
-        mediostransporte.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        solicitud.add(mediostransporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 360, 510, 50));
+        cajatransporte.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        cajatransporte.setForeground(new java.awt.Color(0, 0, 0));
+        cajatransporte.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Si", "No" }));
+        solicitud.add(cajatransporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 390, -1, -1));
 
         botonprofesoresresponsables.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         botonprofesoresresponsables.setForeground(new java.awt.Color(0, 0, 0));
@@ -742,20 +719,20 @@ public class aplicacion extends javax.swing.JFrame {
                 botonprofesoresresponsablesMouseClicked(evt);
             }
         });
-        solicitud.add(botonprofesoresresponsables, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 460, -1, 40));
+        solicitud.add(botonprofesoresresponsables, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 440, -1, 40));
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("Profesores participantes");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        botonprofesoresparticipantes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        botonprofesoresparticipantes.setForeground(new java.awt.Color(0, 0, 0));
+        botonprofesoresparticipantes.setText("Profesores participantes");
+        botonprofesoresparticipantes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
+                botonprofesoresparticipantesMouseClicked(evt);
             }
         });
-        solicitud.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 460, -1, 40));
+        solicitud.add(botonprofesoresparticipantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 440, -1, 40));
 
         elegircursogrupo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cursos", "Grupos" }));
-        solicitud.add(elegircursogrupo, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 520, 180, 40));
+        solicitud.add(elegircursogrupo, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 500, 180, 40));
 
         alumnosselecionar.setText("Seleccionar");
         alumnosselecionar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -768,50 +745,61 @@ public class aplicacion extends javax.swing.JFrame {
                 alumnosselecionarActionPerformed(evt);
             }
         });
-        solicitud.add(alumnosselecionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 520, 180, 40));
+        solicitud.add(alumnosselecionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 500, 180, 40));
 
         alumnos.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         alumnos.setForeground(new java.awt.Color(255, 255, 255));
         alumnos.setText("Alumnos:");
-        solicitud.add(alumnos, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 520, 130, 40));
-
-        requisitobus.setForeground(new java.awt.Color(255, 255, 255));
-        requisitobus.setText("*En el caso de necesitar autobús para la actividad tendrá que avisarse con 2 semanas de antelación.");
-        solicitud.add(requisitobus, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 420, 590, 50));
+        solicitud.add(alumnos, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 500, 130, 40));
 
         profesores.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         profesores.setForeground(new java.awt.Color(255, 255, 255));
         profesores.setText("Profesores:");
-        solicitud.add(profesores, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 460, 110, 40));
+        solicitud.add(profesores, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 440, 110, 40));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Alojamiento:");
-        solicitud.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 580, -1, -1));
+        solicitud.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 560, -1, -1));
 
         cajaalojamiento.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         cajaalojamiento.setForeground(new java.awt.Color(0, 0, 0));
         cajaalojamiento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Si", "No" }));
-        solicitud.add(cajaalojamiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 580, -1, -1));
+        solicitud.add(cajaalojamiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 560, -1, -1));
 
         comentarios.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         comentarios.setForeground(new java.awt.Color(255, 255, 255));
         comentarios.setText("Comentarios:");
-        solicitud.add(comentarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 640, 120, 40));
+        solicitud.add(comentarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 610, 120, 40));
 
-        jButton3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(0, 0, 0));
-        jButton3.setText("Comentar");
-        jButton3.setActionCommand("");
-        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+        botoncomentar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        botoncomentar.setForeground(new java.awt.Color(0, 0, 0));
+        botoncomentar.setText("Comentar");
+        botoncomentar.setActionCommand("");
+        botoncomentar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton3MouseClicked(evt);
+                botoncomentarMouseClicked(evt);
             }
         });
-        solicitud.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 640, 180, 40));
+        solicitud.add(botoncomentar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 610, 180, 40));
 
-        borde.setOpaque(true);
-        solicitud.add(borde, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 700, 810));
+        botonenviarsolicitud.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        botonenviarsolicitud.setForeground(new java.awt.Color(0, 0, 0));
+        botonenviarsolicitud.setText("Enviar Solicitud");
+        botonenviarsolicitud.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonenviarsolicitudMouseClicked(evt);
+            }
+        });
+        botonenviarsolicitud.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonenviarsolicitudActionPerformed(evt);
+            }
+        });
+        solicitud.add(botonenviarsolicitud, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 710, 180, 40));
+
+        fondosolicitud.setOpaque(true);
+        solicitud.add(fondosolicitud, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 700, 810));
 
         cerrarsoli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconocerrar30x30.png"))); // NOI18N
         cerrarsoli.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -855,38 +843,81 @@ public class aplicacion extends javax.swing.JFrame {
         logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Logointerfaz.png"))); // NOI18N
         menu.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 41, -1, 150));
 
-        gestionarsolicitudes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        gestionarsolicitudes.setForeground(new java.awt.Color(255, 255, 255));
-        gestionarsolicitudes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionarsolicitudes.png"))); // NOI18N
-        gestionarsolicitudes.setText("Gestionar solicitudes");
-        gestionarsolicitudes.setPreferredSize(new java.awt.Dimension(134, 50));
-        menu.add(gestionarsolicitudes, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 430, 176, -1));
+        botongestionarsolicitudes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        botongestionarsolicitudes.setForeground(new java.awt.Color(255, 255, 255));
+        botongestionarsolicitudes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionarsolicitudes.png"))); // NOI18N
+        botongestionarsolicitudes.setText("Gestionar solicitudes");
+        botongestionarsolicitudes.setPreferredSize(new java.awt.Dimension(134, 50));
+        menu.add(botongestionarsolicitudes, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 430, 176, -1));
 
-        solicitudaprobada.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        solicitudaprobada.setForeground(new java.awt.Color(255, 255, 255));
-        solicitudaprobada.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aprobada.png"))); // NOI18N
-        solicitudaprobada.setText("Solicitudes aprobadas");
-        solicitudaprobada.setPreferredSize(new java.awt.Dimension(134, 50));
-        menu.add(solicitudaprobada, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 480, 170, -1));
+        botonsolicitudaprobada.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        botonsolicitudaprobada.setForeground(new java.awt.Color(255, 255, 255));
+        botonsolicitudaprobada.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aprobada.png"))); // NOI18N
+        botonsolicitudaprobada.setText("Solicitudes aprobadas");
+        botonsolicitudaprobada.setPreferredSize(new java.awt.Dimension(134, 50));
+        menu.add(botonsolicitudaprobada, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 480, 170, -1));
 
-        actividadpendiente.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        actividadpendiente.setForeground(new java.awt.Color(255, 255, 255));
-        actividadpendiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/actividadpendiente.png"))); // NOI18N
-        actividadpendiente.setText("Solicitudes pendientes");
-        actividadpendiente.setPreferredSize(new java.awt.Dimension(134, 50));
-        menu.add(actividadpendiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 530, 170, -1));
+        botonactividadpendiente.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        botonactividadpendiente.setForeground(new java.awt.Color(255, 255, 255));
+        botonactividadpendiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/actividadpendiente.png"))); // NOI18N
+        botonactividadpendiente.setText("Solicitudes pendientes");
+        botonactividadpendiente.setPreferredSize(new java.awt.Dimension(134, 50));
+        menu.add(botonactividadpendiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 530, 170, -1));
 
-        solicituddenegada.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        solicituddenegada.setForeground(new java.awt.Color(255, 255, 255));
-        solicituddenegada.setIcon(new javax.swing.ImageIcon(getClass().getResource("/solicituddenegada.png"))); // NOI18N
-        solicituddenegada.setText("Solicitudes denegadas");
-        solicituddenegada.setPreferredSize(new java.awt.Dimension(134, 50));
-        menu.add(solicituddenegada, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 580, 170, -1));
+        botonsolicituddenegada.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        botonsolicituddenegada.setForeground(new java.awt.Color(255, 255, 255));
+        botonsolicituddenegada.setIcon(new javax.swing.ImageIcon(getClass().getResource("/solicituddenegada.png"))); // NOI18N
+        botonsolicituddenegada.setText("Solicitudes denegadas");
+        botonsolicituddenegada.setPreferredSize(new java.awt.Dimension(134, 50));
+        menu.add(botonsolicituddenegada, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 580, 170, -1));
 
         getContentPane().add(menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 10, 200, 880));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fondo 1350x900.jpg"))); // NOI18N
         getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1350, 900));
+
+        gestionarsolicitudes.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        titulogestionarsolicitudes.setBackground(new java.awt.Color(0, 0, 0));
+        titulogestionarsolicitudes.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        titulogestionarsolicitudes.setForeground(new java.awt.Color(255, 255, 255));
+        titulogestionarsolicitudes.setText("Gestionar solicitudes");
+        gestionarsolicitudes.add(titulogestionarsolicitudes, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 232, 58));
+
+        cerrargestionarsolicitudes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconocerrar30x30.png"))); // NOI18N
+        gestionarsolicitudes.add(cerrargestionarsolicitudes, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 0, 30, 30));
+
+        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "id_actividad", "Titulo", "Solicitante"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane11.setViewportView(jTable4);
+
+        gestionarsolicitudes.add(jScrollPane11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 870, 330));
+
+        getContentPane().add(gestionarsolicitudes, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 350, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -898,14 +929,26 @@ public class aplicacion extends javax.swing.JFrame {
     }//GEN-LAST:event_cerrarMouseClicked
 
     private void crearsolicitudMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearsolicitudMouseClicked
-
+  
+        DepartamentoDAOImp departamentoDAO = new DepartamentoDAOImp();
+        List <Departamento> listadepartamentos = departamentoDAO.listar();
+        List <String> listanombresdepartamentos = departamentoDAO.nombres(listadepartamentos);
+        for(String valor:listanombresdepartamentos){
+            elegirdepartamento.addItem(valor);
+        }
+        elegirdepartamento.setSelectedIndex(-1);
+        cajatipo.setSelectedIndex(-1);
+        cajaprevista.setSelectedIndex(-1);
+        cajatransporte.setSelectedIndex(-1);
+        elegircursogrupo.setSelectedIndex(-1);
+        cajaalojamiento.setSelectedIndex(-1);
         solicitud.setVisible(true);
-
+        
     }//GEN-LAST:event_crearsolicitudMouseClicked
 
     private void iconoimportardatosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iconoimportardatosMouseClicked
-        importar.setVisible(true);
 
+        importar.setVisible(true);
     }//GEN-LAST:event_iconoimportardatosMouseClicked
 
     private void cuadroimportarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cuadroimportarActionPerformed
@@ -929,10 +972,6 @@ public class aplicacion extends javax.swing.JFrame {
         solicitud.setVisible(false);
         profesoresresponsables.setVisible(false);
     }//GEN-LAST:event_cerrarsoliMouseClicked
-
-    private void andandoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_andandoMouseClicked
-
-    }//GEN-LAST:event_andandoMouseClicked
 
     private void ffinAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_ffinAncestorAdded
         JSpinner.DateEditor editor = new JSpinner.DateEditor(ffin, "dd/MM/yyyy");
@@ -991,7 +1030,7 @@ public class aplicacion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+    private void botonprofesoresparticipantesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonprofesoresparticipantesMouseClicked
         profesoresparticipantes.setVisible(true);
 
         ProfesorDAOImp profesorDAO = new ProfesorDAOImp();
@@ -1007,7 +1046,7 @@ public class aplicacion extends javax.swing.JFrame {
         listaprofesoresparticipantes.setModel(model);
         listaprofesoresparticipantes.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
         this.setVisible(true);
-    }//GEN-LAST:event_jButton1MouseClicked
+    }//GEN-LAST:event_botonprofesoresparticipantesMouseClicked
 
     private void cerrarprofesoresparticipantesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cerrarprofesoresparticipantesMouseClicked
         profesoresparticipantes.setVisible(false);
@@ -1123,9 +1162,32 @@ public class aplicacion extends javax.swing.JFrame {
         panelcomentarios.setVisible(false);
     }//GEN-LAST:event_jLabel11MouseClicked
 
-    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+    private void botoncomentarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botoncomentarMouseClicked
         panelcomentarios.setVisible(true);
-    }//GEN-LAST:event_jButton3MouseClicked
+    }//GEN-LAST:event_botoncomentarMouseClicked
+
+    private void elegirdepartamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_elegirdepartamentoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_elegirdepartamentoActionPerformed
+
+    private void elegirdepartamentoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_elegirdepartamentoMouseClicked
+        
+    }//GEN-LAST:event_elegirdepartamentoMouseClicked
+
+    private void botonenviarsolicitudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonenviarsolicitudActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonenviarsolicitudActionPerformed
+
+    private void botonenviarsolicitudMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonenviarsolicitudMouseClicked
+        if(validadatos()){
+            System.out.println("funciona");
+        }
+        
+    }//GEN-LAST:event_botonenviarsolicitudMouseClicked
+
+    private void cuadrotitulosolicitudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cuadrotitulosolicitudActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cuadrotitulosolicitudActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1139,46 +1201,109 @@ public class aplicacion extends javax.swing.JFrame {
             }
         });
     }
+    private boolean validadatos(){
+        if(!cuadrotitulosolicitud.getText().matches("^([A-Z0-9Ñ][a-záéíóúñºª]*)(\\s[A-Za-z0-9ñÑºªáéíóú]*)*$")){
+           JOptionPane.showMessageDialog(null, "Ingresa un título válido");
+           return false;
+        }else if(elegirdepartamento.getSelectedIndex()<0){
+            JOptionPane.showMessageDialog(null, "Selecciona un departamento");
+            return false;
+        }else if(cajatipo.getSelectedIndex()<0){
+            JOptionPane.showMessageDialog(null, "Seleciona un tipo de actividad");
+            return false;
+        }else if(cajaprevista.getSelectedIndex()<0){
+            JOptionPane.showMessageDialog(null, "Seleciona si está prevista o no");
+            return false;
+        }else if(obtenerLocalDateTimeDesdeSpinners(hini,fini).isBefore(LocalDateTime.now())){
+            JOptionPane.showMessageDialog(null, "La fecha inicial tiene que ser posterior a la fecha actual");
+                   return false;
+        }
+        else if(obtenerLocalDateTimeDesdeSpinners(hfin,ffin).isBefore(obtenerLocalDateTimeDesdeSpinners(hini,fini))){
+                JOptionPane.showMessageDialog(null, "La fecha final tiene que ser posterior a la fecha inicial");
+                   return false;
+            }else if(cajatransporte.getSelectedIndex()<0){
+            JOptionPane.showMessageDialog(null, "Seleciona si se necesita transporte o no");
+            return false;
+        }
+    
+        return true; 
+    }
+        private  LocalDateTime obtenerLocalDateTimeDesdeSpinners(JSpinner horaSpinner, JSpinner fechaSpinner) {
+        // Obtener la hora y la fecha seleccionadas de los Spinners como objetos Date
+        Date horaSeleccionada = (Date) horaSpinner.getValue();
+        Date fechaSeleccionada = (Date) fechaSpinner.getValue();
 
+        // Convertir los objetos Date a objetos LocalTime y LocalDate respectivamente
+        LocalTime localTime = horaSeleccionada.toInstant().atZone(ZoneId.systemDefault()).toLocalTime();
+        LocalDate localDate = fechaSeleccionada.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+
+        // Combinar la hora y la fecha en un LocalDateTime
+        return LocalDateTime.of(localDate, localTime);
+    }
+           
+    public  DocumentFilter limitaCaracteres(int numCaracteres) {
+        DocumentFilter filter = new DocumentFilter() {
+            @Override
+            public void replace(FilterBypass fb, int offset, int length, String text, AttributeSet attrs)
+                    throws BadLocationException {
+                String string = fb.getDocument().getText(0, fb.getDocument().getLength()) + text;
+
+                if (string.length() <= numCaracteres) {
+                    super.replace(fb, offset, length, text, attrs);
+                }
+            }
+        };
+        return filter;
+    }
+    private void setDocumentfilter(JTextField campo, int caracteres) {
+        DocumentFilter filter = limitaCaracteres(caracteres);
+        ((PlainDocument) campo.getDocument()).setDocumentFilter(filter);
+    }
+    
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Tipo;
-    private javax.swing.JLabel actividadpendiente;
     private javax.swing.JLabel actividadprevista;
     private javax.swing.JLabel alumnos;
     private javax.swing.JButton alumnosselecionar;
-    private java.awt.Checkbox andando;
-    private java.awt.Checkbox autobus;
-    private java.awt.Checkbox avion;
-    private java.awt.Checkbox barco;
-    private java.awt.Checkbox bicicleta;
-    private javax.swing.JLabel borde;
+    private javax.swing.JLabel botonactividadpendiente;
     private javax.swing.JPanel botoncerrar;
+    private javax.swing.JButton botoncomentar;
+    private javax.swing.JButton botonenviarsolicitud;
     private javax.swing.JPanel botonesminmaxcerrar;
+    private javax.swing.JLabel botongestionarsolicitudes;
+    private javax.swing.JButton botonprofesoresparticipantes;
     private javax.swing.JButton botonprofesoresresponsables;
+    private javax.swing.JLabel botonsolicitudaprobada;
+    private javax.swing.JLabel botonsolicituddenegada;
     private javax.swing.JComboBox<String> cajaalojamiento;
     private javax.swing.JComboBox<String> cajaprevista;
     private javax.swing.JComboBox<String> cajatipo;
+    private javax.swing.JComboBox<String> cajatransporte;
     private javax.swing.JLabel cerrar;
     private javax.swing.JLabel cerrarcursosparticipantes;
+    private javax.swing.JLabel cerrargestionarsolicitudes;
     private javax.swing.JLabel cerrargruposparticipantes;
     private javax.swing.JLabel cerrarprofesoresparticipantes;
     private javax.swing.JLabel cerrarprofesoresresponsables;
     private javax.swing.JLabel cerrarsoli;
     private javax.swing.JLabel comentarios;
     private javax.swing.JLabel crearsolicitud;
-    private javax.swing.JTextField cuadrodepartamento;
     private javax.swing.JFileChooser cuadroimportar;
-    private javax.swing.JTextField cuadrotitulo1;
+    private javax.swing.JTextField cuadrotitulosolicitud;
     private javax.swing.JPanel cursosparticipantes;
     private javax.swing.JLabel departamento;
     private javax.swing.JComboBox<String> elegircursogrupo;
+    private javax.swing.JComboBox<String> elegirdepartamento;
     private javax.swing.JLabel encabezado;
     private javax.swing.JLabel fechafin;
     private javax.swing.JLabel fechaini;
     private javax.swing.JSpinner ffin;
     private javax.swing.JSpinner fini;
     private javax.swing.JLabel fondo;
-    private javax.swing.JLabel gestionarsolicitudes;
+    private javax.swing.JLabel fondosolicitud;
+    private javax.swing.JPanel gestionarsolicitudes;
     private javax.swing.JPanel gruposparticipantes;
     private javax.swing.JButton guardarcursosparticipantes;
     private javax.swing.JButton guardargruposparticipantes;
@@ -1191,9 +1316,7 @@ public class aplicacion extends javax.swing.JFrame {
     private javax.swing.JLabel horario1;
     private javax.swing.JLabel iconoimportardatos;
     private javax.swing.JPanel importar;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1208,6 +1331,7 @@ public class aplicacion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -1219,6 +1343,7 @@ public class aplicacion extends javax.swing.JFrame {
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
+    private javax.swing.JTable jTable4;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea3;
@@ -1227,26 +1352,21 @@ public class aplicacion extends javax.swing.JFrame {
     private javax.swing.JList<String> listaprofesoresparticipantes;
     private javax.swing.JList<String> listaprofesoresresponsables;
     private javax.swing.JLabel logo;
-    private javax.swing.JLabel mediostransporte;
     private javax.swing.JPanel menu;
     private javax.swing.JPanel panelcomentarios;
     private javax.swing.JLabel profesores;
     private javax.swing.JPanel profesoresparticipantes;
     private javax.swing.JPanel profesoresresponsables;
-    private javax.swing.JLabel requisitobus;
     private javax.swing.JPanel solicitud;
-    private javax.swing.JLabel solicitudaprobada;
-    private javax.swing.JLabel solicituddenegada;
     private javax.swing.JPanel solicitudesaprobadas;
     private javax.swing.JPanel solicitudesdenegadas;
     private javax.swing.JPanel solicitudespendientes;
-    private java.awt.Checkbox taxi;
     private javax.swing.JLabel titulo;
     private javax.swing.JLabel titulocursosparticipantes;
+    private javax.swing.JLabel titulogestionarsolicitudes;
     private javax.swing.JLabel titulogruposparticipantes;
     private javax.swing.JLabel tituloprofesoresparticipantes;
     private javax.swing.JLabel tituloprofesoresresponsables;
     private javax.swing.JLabel transporte;
-    private java.awt.Checkbox tren;
     // End of variables declaration//GEN-END:variables
 }
