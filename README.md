@@ -7,7 +7,7 @@
 ## INDICE
 - Documentacion  " ## [UD1 Elementos para el desarrolo de software](Copiar .md )"
   
-- Documentacion general##[Documetacion general](DocumentoGeneralDefenitiva.md)
+- Documentacion general##[Documetacion general](Documentacion/DocumentoGeneralDefenitiva.md)
   
 ***
 
