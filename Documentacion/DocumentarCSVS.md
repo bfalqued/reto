@@ -1,6 +1,7 @@
 ## Documentar  CSVS
 
 [![Captura9.png](https://i.postimg.cc/PJf8Fbjn/Captura9.png)](https://postimg.cc/cgjHvnCF)
+
 Para importar los documentos CSV debemos dirigirnos a donde el apartado de "Export/Import"
 
 ## Tabla departamentos
