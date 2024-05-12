@@ -30,11 +30,8 @@ y número de alumnos al registrar una actividad nueva  [Aquí](#gp)
 
 ## Base de datos <a name="bd">
 ***
-
 - DESCRIPCION DE LA BASE DE DATOS
 [![Diagrama-BD.png](https://i.postimg.cc/rsYwW1js/Diagrama-BD.png)](https://postimg.cc/JHZ8CB9C)
-
-
 ### 1.Tabla Profesor
 * Columnas: id_profesor,dni,nombre,apellidos,correo,contraseña,perfil,activo
 * Clave primaria: id_profesor
