@@ -88,7 +88,7 @@ y número de alumnos al registrar una actividad nueva
 ###
 <br>
 
-### Diagrama E/R <a name="#diagramaE/R"></a>
+### Diagrama E/R <a name="diagramaE/R"></a>
 
 [![Diagrama-ER.png](https://i.postimg.cc/N049Fr39/Diagrama-ER.png)](https://postimg.cc/VSJLH5Lm)
 
@@ -97,7 +97,7 @@ En este diagrama de entidad y relacion, hemos podido representar las cardinalida
 
 <br>
 
-### Diagrama relacional <a name="#diagramaR"></a>
+### Diagrama relacional <a name="diagramaR"></a>
 ***
 
 [![Modelo-Relacional-Reto-Equipo2-2-drawio.png](https://i.postimg.cc/htRf0rgQ/Modelo-Relacional-Reto-Equipo2-2-drawio.png)](https://postimg.cc/0bZkk7z9)
@@ -115,7 +115,7 @@ https://github.com/bfalqued/reto/blob/rama-elsa/Base%20de%20Datos/Scrip
 
 ## Web
 [![inicio.png](https://i.postimg.cc/sXVqtBSH/inicio.png)](https://postimg.cc/hJ52mt2V)
-### Estructura de la pagina web <a name="#WebEstructura"></a>
+### Estructura de la pagina web <a name="WebEstructura"></a>
 ***
 
 La estructura de la pagina web sigue un diseño minimalista y funcional, con un encabezado fijo que incluye el logotipo de la instuticion escolar y un menu de navegacion para acceder facilmente a los diferentes apartados. 
@@ -152,7 +152,7 @@ En base a la aplicacion que hemos realizado
 
 ## Java 
 
-### Diagrama de clases <a name="#diagramaClases"></a>
+### Diagrama de clases <a name="diagramaClases"></a>
 [![DIAGRAMA-CLASES-EQUIPO2.png](https://i.postimg.cc/rsk1L6YF/DIAGRAMA-CLASES-EQUIPO2.png)](https://postimg.cc/gXgXv7Wf)
 
 ***
