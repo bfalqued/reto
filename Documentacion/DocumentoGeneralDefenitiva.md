@@ -31,7 +31,7 @@ y número de alumnos al registrar una actividad nueva  [Aquí](#gp)
 ## Base de datos <a name="bd">
 ***
 
-
+- DESCRIPCION DE LA BASE DE DATOS
 [![Diagrama-BD.png](https://i.postimg.cc/rsYwW1js/Diagrama-BD.png)](https://postimg.cc/JHZ8CB9C)
 
 
@@ -90,7 +90,6 @@ y número de alumnos al registrar una actividad nueva  [Aquí](#gp)
 * Columnas: id_profesor,id_actividad
 * Clave: id_profesor 
 
-### Ademas se han utilizado los siguientes triggers: 
 
 ###
 <br>
