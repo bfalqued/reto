@@ -11,12 +11,13 @@ import javax.swing.JOptionPane;
  *
  * @author Borja
  */
-public class Interfaz extends javax.swing.JFrame {
 
+public class Interfaz extends javax.swing.JFrame {
     /**
      * Creates new form Interfaz
      */
     //   private final ProfesorDAOImp profesorDAO;
+    private Profesor profesor;
     public Interfaz() {
         initComponents();
 
@@ -145,12 +146,13 @@ public class Interfaz extends javax.swing.JFrame {
             String correo = introducecorreo.getText();
             String contraseña = introducecontrasena.getText();
 
-            Profesor profesor = p1.verificarCredenciales(correo, contraseña);
+             profesor = p1.verificarCredenciales(correo, contraseña);
             if (profesor != null) {
                 // Las credenciales son correctas, puedes permitir el acceso
                 JOptionPane.showMessageDialog(null, "¡Bienvenido!");
                 // Aquí puedes abrir la siguiente ventana o realizar alguna acción adicional
                 aplicacion aplicacion = new aplicacion();
+                aplicacion.setProfesor(profesor);
                 aplicacion.setVisible(true);
                 this.dispose();
             } else {

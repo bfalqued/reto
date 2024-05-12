@@ -7,7 +7,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 /**
  *
  * @author Borja
@@ -108,6 +110,34 @@ public class GrupoDAOImp implements Repositorio <Grupo>{
             nombres.add(cadena);
         }
         return nombres;
+    }
+    public Map<Grupo,Integer> gruposYnumAlumnos(Map<String,Integer> nombresynumAlumnos){
+        Map<Grupo,Integer> resultado = new HashMap<>();
+        for(Map.Entry<String, Integer> entry : nombresynumAlumnos.entrySet()) {
+            String nombre = entry.getKey();
+            Integer numAlumnos = entry.getValue();
+            Grupo grupo = porcodigo(nombre);
+            if(grupo != null) {
+                resultado.put(grupo, numAlumnos);
+            }
+        }
+            return resultado;}
+
+    public Grupo porcodigo(String codigo) {
+        Grupo grupo = null;
+        String sql = "SELECT id_grupo,codigo,curso,num_alumnos,activo FROM grupo WHERE codigo=?";
+        try (PreparedStatement stmt = getConnection().prepareStatement(sql);) {
+            stmt.setString(1, codigo);
+            try (ResultSet rs = stmt.executeQuery();) {
+                if (rs.next()) {
+                    grupo = crearGrupo(rs);
+                }
+            }
+        } catch (SQLException ex) {
+// errores
+            System.out.println("SQLException: " + ex.getMessage());
+        }
+        return grupo;
     }
     
     private Grupo crearGrupo (final ResultSet rs)throws SQLException{

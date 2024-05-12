@@ -7,7 +7,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -90,6 +92,35 @@ public class CursoDAOImp implements Repositorio<Curso> {
         String sql = "SELECT id_curso,codigo,descripcion,etapa,activo FROM curso WHERE id_curso=?";
         try (PreparedStatement stmt = getConnection().prepareStatement(sql);) {
             stmt.setInt(1, id_curso);
+            try (ResultSet rs = stmt.executeQuery();) {
+                if (rs.next()) {
+                    curso = crearCurso(rs);
+                }
+            }
+        } catch (SQLException ex) {
+// errores
+            System.out.println("SQLException: " + ex.getMessage());
+        }
+        return curso;
+    }
+    public Map<Curso, Integer> gruposYnumAlumnos(Map<String, Integer> nombresynumAlumnos) {
+        Map<Curso, Integer> resultado = new HashMap<>();
+        for (Map.Entry<String, Integer> entry : nombresynumAlumnos.entrySet()) {
+            String nombre = entry.getKey();
+            Integer numAlumnos = entry.getValue();
+            Curso curso = porCodigo(nombre);
+            if (curso != null) {
+                resultado.put(curso, numAlumnos);
+            }
+        }
+        return resultado;
+    }
+
+    public Curso porCodigo(String codigo) {
+        Curso curso = null;
+        String sql = "SELECT id_curso,codigo,descripcion,etapa,activo FROM curso WHERE codigo=?";
+        try (PreparedStatement stmt = getConnection().prepareStatement(sql);) {
+            stmt.setString(1, codigo);
             try (ResultSet rs = stmt.executeQuery();) {
                 if (rs.next()) {
                     curso = crearCurso(rs);

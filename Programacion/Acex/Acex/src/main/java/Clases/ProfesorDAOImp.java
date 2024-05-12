@@ -43,6 +43,32 @@ public class ProfesorDAOImp implements Repositorio<Profesor> {
         }
         return profesores;
     }
+    public List<Profesor> obtenerProfesoresDesdeMapadeNombres(List<String> nombresYApellidos) {
+        List<Profesor> profesores = new ArrayList<>();
+
+        // Obtener todos los profesores de la base de datos
+        List<Profesor> todosLosProfesores = this.listar();
+
+        // Iterar sobre la lista de nombres y apellidos
+        for (String nombreApellido : nombresYApellidos) {
+            // Separar nombre y apellido
+            String[] partes = nombreApellido.split(" ");
+            if (partes.length == 2) {
+                String nombre = partes[0];
+                String apellido = partes[1];
+
+                // Buscar el profesor correspondiente en la lista de todos los profesores
+                for (Profesor profesor : todosLosProfesores) {
+                    if (profesor.getNombre().equals(nombre) && profesor.getApellido().equals(apellido)) {
+                        profesores.add(profesor); // Agregar el profesor encontrado a la lista resultante
+                        break; // Terminar la búsqueda una vez que se haya encontrado el profesor
+                    }
+                }
+            }
+        }
+
+        return profesores;
+    }
 
     @Override
     public void guardar(Profesor profesor) {

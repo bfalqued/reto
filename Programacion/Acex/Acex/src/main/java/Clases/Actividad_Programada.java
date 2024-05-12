@@ -12,8 +12,8 @@ public class Actividad_Programada extends Actividad_Solicitada{
     private double importeTransporte;
     private String comentarioAdicional;
 
-    public Actividad_Programada( int id_actividad, String titulo, TipoActividad tipo, int departamento, boolean prevista, LocalDateTime fechaInicio, LocalDateTime fechaFin, boolean transporte, String comentarioTransporte, boolean alojamiento, String comentarioAlojamiento, String comentario, EstadoActividad estado, String comentarioEstado,String empresaTransporte, double importeTransporte, String comentarioAdicional) {
-        super(id_actividad, 0, titulo, tipo, departamento, prevista, fechaInicio, fechaFin, transporte, comentarioTransporte, alojamiento, comentarioAlojamiento, comentario, estado, comentarioEstado);
+    public Actividad_Programada( String titulo, TipoActividad tipo, int departamento, boolean prevista, LocalDateTime fechaInicio, LocalDateTime fechaFin, boolean transporte, String comentarioTransporte, boolean alojamiento, String comentarioAlojamiento, String comentario, EstadoActividad estado, String comentarioEstado,String empresaTransporte, double importeTransporte, String comentarioAdicional) {
+        super( 0, titulo, tipo, departamento, prevista, fechaInicio, fechaFin, transporte, comentarioTransporte, alojamiento, comentarioAlojamiento, comentario, estado, comentarioEstado);
         this.empresaTransporte = empresaTransporte;
         this.importeTransporte = importeTransporte;
         this.comentarioAdicional = comentarioAdicional;

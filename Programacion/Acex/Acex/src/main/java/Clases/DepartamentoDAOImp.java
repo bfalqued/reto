@@ -112,5 +112,21 @@ public class DepartamentoDAOImp implements Repositorio <Departamento>{
         return new Departamento(
         rs.getInt("id_depart"),rs.getString("nombre"),rs.getInt("jefe"),rs.getString("codigo_departamento"));
     }
+    public Departamento porNombre(String nombre) {
+        Departamento departamento = null;
+        String sql = "SELECT id_depart,nombre,jefe,codigo_departamento FROM departamento WHERE nombre=?";
+        try (PreparedStatement stmt = getConnection().prepareStatement(sql);) {
+            stmt.setString(1, nombre);
+            try (ResultSet rs = stmt.executeQuery();) {
+                if (rs.next()) {
+                    departamento = crearDepartamento(rs);
+                }
+            }
+        } catch (SQLException ex) {
+// errores
+            System.out.println("SQLException: " + ex.getMessage());
+        }
+        return departamento;
+    }
     
 }

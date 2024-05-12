@@ -24,8 +24,7 @@ public class Actividad_Solicitada {
     private EstadoActividad estado;
     private String comentarioEstado;
 
-    public Actividad_Solicitada(int id_actividad, int solicitante, String titulo, TipoActividad tipo, int departamento, boolean prevista, LocalDateTime fechaInicio, LocalDateTime fechaFin, boolean transporte, String comentarioTransporte, boolean alojamiento, String comentarioAlojamiento, String comentario, EstadoActividad estado, String comentarioEstado) {
-        this.id_actividad = id_actividad;
+    public Actividad_Solicitada(int solicitante, String titulo, TipoActividad tipo, int departamento, boolean prevista, LocalDateTime fechaInicio, LocalDateTime fechaFin, boolean transporte, String comentarioTransporte, boolean alojamiento, String comentarioAlojamiento, String comentario, EstadoActividad estado, String comentarioEstado) {
         this.solicitante = solicitante;
         this.titulo = titulo;
         this.tipo = tipo;

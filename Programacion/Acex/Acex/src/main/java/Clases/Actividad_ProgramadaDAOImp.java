@@ -140,8 +140,7 @@ public class Actividad_ProgramadaDAOImp implements Repositorio <Actividad_Progra
         return actividad_programada;
     }
     private Actividad_Programada crearActividad_Programada (final ResultSet rs)throws SQLException{
-        return new Actividad_Programada(
-                rs.getInt("id_actividad"),
+        return new Actividad_Programada(               
                 rs.getString("titulo"),
                 TipoActividad.valueOf(rs.getString("tipo")),
                 rs.getInt("departamento"),
