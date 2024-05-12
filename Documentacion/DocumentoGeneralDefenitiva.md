@@ -96,7 +96,7 @@ En este diagrama de entidad y relacion, hemos podido representar las cardinalida
 
 <br>
 
-### Diagrama relacional <b name="diagramaR"></b>
+### Diagrama relacional <a name="diagramaR"></a>
 ***
 
 [![Modelo-Relacional-Reto-Equipo2-2-drawio.png](https://i.postimg.cc/htRf0rgQ/Modelo-Relacional-Reto-Equipo2-2-drawio.png)](https://postimg.cc/0bZkk7z9)
