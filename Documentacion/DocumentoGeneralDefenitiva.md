@@ -1,4 +1,3 @@
-
 # Documentacion general
 
 ## **Indice** 
@@ -135,7 +134,7 @@ Cada seccion tiene su propio encabezado y contenido relevante
 * Fondo y capa semitransparente:El fondo de la página presenta una imagen de montañas nevadas, que evoca una sensación de tranquilidad y naturaleza. Se ha añadido una capa semitransparente sobre el fondo para mejorar la legibilidad del texto y los elementos de la página.
 * Galería de Fotos en Cuadrícula: La galería de fotos se presenta en una cuadrícula de tres columnas para una visualización ordenada y estética de las imágenes. Esto facilita la exploración de las fotos y mejora la experiencia del usuario.
 
-### Tipos de estilos utilizados <a name=#WebEstilos></a>
+### Tipos de estilos utilizados <a name=WebEstilos></a>
 * Estilos Globales: Se han utilizado estilos globales para establecer márgenes, rellenos y fuentes predeterminadas para todos los elementos de la página. Esto garantiza consistencia en todo el diseño y una apariencia uniforme en toda la página web.
 * Estilos de encabezado y menu: Los estilos especificos se han aplicado al encabezado y menu de navegacion para mejorar su apariencia y funcionalidad.Se han utilizado suaves y efectos de desplazamiento para una experiencia de usuario mas atractiva 
 * Estilos de secciones: Cada seccion de la pagina tiene su propio estilo para destacar el contenido relevante.Se han utilizado fondos semitransparentes y sombras para resaltar las secciones y mejorar su legibilidad 
