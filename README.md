@@ -36,7 +36,7 @@ página web en la que se informe de las actividades realizadas
 
 <br>
 
-## Mantenimientos basicos de la aplicacion 
+## Mantenimientos basicos de la aplicación 
 ***
 Solo es accesible para el super usuario y el rol de administrador.
 
@@ -56,19 +56,19 @@ de una actividad y podrán modificarla mientras esté en el estado solicitada
 Si el profesor solo tiene el rol de profesor, siempre va a poder ver las solicitudes creadas por él
 y en las que son responsable. 
 
-## Aprobacion/denegacion de solicitudes 
+## Aprobación/denegación de solicitudes 
 ****
 Si el profesor tiene el perfil de equipo directivo o administrador, muestra todas las solicitudes
 que están en estado solicitado
 y denegado apareciendo siempre las solicitudes primero que las denegadas
 
-## Fase de preparacion de la actividad 
+## Fase de preparación de la actividad 
 ***
 Esta opcion es solo para el administrador y los profesores responsables, es la actividad creada a partir de la solicitud aprobada 
 
 * Empresa de transporte: area de texto donde se introducen datos relativos 
 
-## Genreracion de informes
+## Genreración de informes
 ***
 * Informe del calendario de las actividades programas para el mes siguiente a la fecha actual 
 * Informe anual de las actividades realizadas en un grupo o un curso 
