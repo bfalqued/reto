@@ -1,7 +1,7 @@
 package InterfazGrafica;
 
+import BaseDatos.MetodosBD;
 import Clases.Profesor;
-import Clases.ProfesorDAOImp;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -11,21 +11,18 @@ import javax.swing.JOptionPane;
  *
  * @author Borja
  */
+
 public class Interfaz extends javax.swing.JFrame {
-    private aplicacion app;
-    ProfesorDAOImp p1 ;
+    /**
+     * Creates new form Interfaz
+     */
+    //   private final ProfesorDAOImp profesorDAO;
     private Profesor profesor;
-    
     public Interfaz() {
         initComponents();
-        
+
     }
 
-    public Profesor getProfesorLogin() {
-        return profesor;
-    }
-
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -144,18 +141,19 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_iconocerrarMouseClicked
 
     private void botonloginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonloginMouseClicked
-        p1 = new ProfesorDAOImp();
+        MetodosBD bd= new MetodosBD();
         botonlogin.addActionListener((java.awt.event.ActionEvent e) -> {
             String correo = introducecorreo.getText();
             String contraseña = introducecontrasena.getText();
 
-            profesor = p1.verificarCredenciales(correo, contraseña);
+             profesor = bd.verificarCredencialesProfesor(correo, contraseña);
             if (profesor != null) {
                 // Las credenciales son correctas, puedes permitir el acceso
                 JOptionPane.showMessageDialog(null, "¡Bienvenido!");
                 // Aquí puedes abrir la siguiente ventana o realizar alguna acción adicional
-                
-                app.setVisible(true);
+                aplicacion aplicacion = new aplicacion();
+                aplicacion.setProfesor(profesor);
+                aplicacion.setVisible(true);
                 this.dispose();
             } else {
                 // Las credenciales son incorrectas
@@ -207,7 +205,6 @@ public class Interfaz extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
-            @Override
             public void run() {
                 new Interfaz().setVisible(true);
             }

@@ -1,6 +1,8 @@
 
 package Clases;
 
+import java.util.List;
+
 /**
  *
  * @author Borja
@@ -10,7 +12,7 @@ public class Departamento {
     private String nombre;
     private int jefe;
     private String codigo_departamento;
-    
+    private List<Profesor> profesores;
 
     public Departamento(int id_departamento, String nombre, int jefe, String codigo_departamento) {
         this.id_departamento = id_departamento;
@@ -51,6 +53,16 @@ public class Departamento {
     public void setCodigo_departamento(String codigo_departamento) {
         this.codigo_departamento = codigo_departamento;
     }
+
+    public List<Profesor> getProfesores() {
+        return profesores;
+    }
+
+    public void setProfesores(List<Profesor> profesores) {
+        this.profesores = profesores;
+    }
+    
+    
 
     @Override
     public String toString() {

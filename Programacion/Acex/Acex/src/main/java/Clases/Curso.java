@@ -1,6 +1,9 @@
 
 package Clases;
 
+import Enumerados.Etapa;
+import java.util.List;
+
 /**
  *
  * @author Borja
@@ -11,7 +14,7 @@ public class Curso {
     private String descurso;
     private Etapa etapa;
     private boolean ACTIVO;
-
+    private List<Grupo> grupos;
     public Curso(int idcurso, String codcurso, String descurso, Etapa etapa, boolean ACTIVO) {
         this.idcurso = idcurso;
         this.codcurso = codcurso;
@@ -60,6 +63,14 @@ public class Curso {
 
     public void setActivo(boolean activo) {
         this.ACTIVO = activo;
+    }
+
+    public List<Grupo> getGrupos() {
+        return grupos;
+    }
+
+    public void setGrupos(List<Grupo> grupos) {
+        this.grupos = grupos;
     }
     
 

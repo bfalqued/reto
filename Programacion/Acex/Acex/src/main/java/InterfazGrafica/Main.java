@@ -11,11 +11,6 @@ package InterfazGrafica;
 public class Main {
     
     public static void main (String[] args){
-        aplicacion aplicacion = new aplicacion();
-        
-        // Crear una instancia de Interfaz pasando la referencia de Aplicacion
-        Interfaz interfaz = new Interfaz();
-        aplicacion.setInterfaz(interfaz);
-        interfaz.setVisible(true);
+        new Interfaz().setVisible(true);
     }
 }

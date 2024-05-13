@@ -1,6 +1,8 @@
 
 package Clases;
 
+import Enumerados.Perfil;
+
 /**
  *
  * @author Borja
@@ -9,14 +11,14 @@ public class Profesor {
     private int id_profesor;
     private String nombre;
     private String apellido;
-    private int departamento;
+    private Departamento departamento;
     private String correo;
     private String contrasena;
     private Perfil perfil;
     private String dni;
     private boolean activo;
 
-    public Profesor(int id_profesor, String nombre, String apellido, int departamento, String correo, String contrasena, Perfil perfil, String dni, boolean activo) {
+    public Profesor(int id_profesor, String nombre, String apellido, Departamento departamento, String correo, String contrasena, Perfil perfil, String dni, boolean activo) {
         this.id_profesor = id_profesor;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -54,11 +56,11 @@ public class Profesor {
         this.apellido = apellido;
     }
 
-    public int getDepartamento() {
+    public Departamento getDepartamento() {
         return departamento;
     }
 
-    public void setDepartamento(int departamento) {
+    public void setDepartamento(Departamento departamento) {
         this.departamento = departamento;
     }
 

@@ -9,7 +9,7 @@ public class Foto {
     private int id_foto;
     private String url;
     private String descripcion;
-
+    private Actividad_Programada actividadProgramada;
     public Foto(int id_foto, String url, String descripcion) {
         this.id_foto = id_foto;
         this.url = url;
@@ -39,6 +39,16 @@ public class Foto {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+
+    public Actividad_Programada getActividadProgramada() {
+        return actividadProgramada;
+    }
+
+    public void setActividadProgramada(Actividad_Programada actividadProgramada) {
+        this.actividadProgramada = actividadProgramada;
+    }
+    
+    
 
     @Override
     public String toString() {

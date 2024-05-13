@@ -8,14 +8,14 @@ package Clases;
 public class Grupo {
     private int idgrupo;
     private String codgrupo;
-    private int idcurso;
+    private Curso curso;
     private int alumnos;
     private boolean activo;
 
-    public Grupo(int idgrupo, String codgrupo, int idcurso, int alumnos, boolean activo) {
+    public Grupo(int idgrupo, String codgrupo, Curso curso, int alumnos, boolean activo) {
         this.idgrupo = idgrupo;
         this.codgrupo = codgrupo;
-        this.idcurso = idcurso;
+        this.curso = curso;
         this.alumnos = alumnos;
         this.activo = activo;
     }
@@ -36,12 +36,12 @@ public class Grupo {
         this.codgrupo = codgrupo;
     }
 
-    public int getIdcurso() {
-        return idcurso;
+    public Curso getcurso() {
+        return curso;
     }
 
-    public void setIdcurso(int idcurso) {
-        this.idcurso = idcurso;
+    public void setcurso(Curso curso) {
+        this.curso = curso;
     }
 
     public int getAlumnos() {
@@ -62,7 +62,7 @@ public class Grupo {
 
     @Override
     public String toString() {
-        return "Grupo{" + "idgrupo=" + idgrupo + ", codgrupo=" + codgrupo + ", idcurso=" + idcurso + ", alumnos=" + alumnos + ", activo=" + activo + '}';
+        return "Grupo{" + "idgrupo=" + idgrupo + ", codgrupo=" + codgrupo + ", curso=" + curso + ", alumnos=" + alumnos + ", activo=" + activo + '}';
     }
 
     

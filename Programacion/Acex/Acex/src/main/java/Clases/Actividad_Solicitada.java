@@ -1,7 +1,11 @@
 
 package Clases;
 
+import Enumerados.EstadoActividad;
+import Enumerados.TipoActividad;
 import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -9,10 +13,10 @@ import java.time.LocalDateTime;
  */
 public class Actividad_Solicitada {
     private int id_actividad;
-    private int solicitante;
+    private Profesor solicitante;
     private String titulo;
     private TipoActividad tipo;
-    private int departamento;
+    private Departamento departamento;
     private boolean prevista;
     private LocalDateTime fechaInicio;
     private LocalDateTime fechaFin;
@@ -23,9 +27,11 @@ public class Actividad_Solicitada {
     private String comentario;
     private EstadoActividad estado;
     private String comentarioEstado;
+    private Map<Object,Integer> participantes;
+    private List<Profesor> profesoresParticipantes;
+    private List<Profesor> profesorResponsables;
 
-    public Actividad_Solicitada(int id_actividad, int solicitante, String titulo, TipoActividad tipo, int departamento, boolean prevista, LocalDateTime fechaInicio, LocalDateTime fechaFin, boolean transporte, String comentarioTransporte, boolean alojamiento, String comentarioAlojamiento, String comentario, EstadoActividad estado, String comentarioEstado) {
-        this.id_actividad = id_actividad;
+    public Actividad_Solicitada(Profesor solicitante, String titulo, TipoActividad tipo, Departamento departamento, boolean prevista, LocalDateTime fechaInicio, LocalDateTime fechaFin, boolean transporte, String comentarioTransporte, boolean alojamiento, String comentarioAlojamiento, String comentario, EstadoActividad estado, String comentarioEstado) {
         this.solicitante = solicitante;
         this.titulo = titulo;
         this.tipo = tipo;
@@ -37,7 +43,7 @@ public class Actividad_Solicitada {
         this.comentarioTransporte = comentarioTransporte;
         this.alojamiento = alojamiento;
         this.comentarioAlojamiento = comentarioAlojamiento;
-        this.comentario = comentario;
+        this.comentario= comentario;
         this.estado = estado;
         this.comentarioEstado = comentarioEstado;
     }
@@ -50,11 +56,11 @@ public class Actividad_Solicitada {
         this.id_actividad = id_actividad;
     }
 
-    public int getSolicitante() {
+    public Profesor getSolicitante() {
         return solicitante;
     }
 
-    public void setSolicitante(int solicitante) {
+    public void setSolicitante(Profesor solicitante) {
         this.solicitante = solicitante;
     }
 
@@ -74,11 +80,11 @@ public class Actividad_Solicitada {
         this.tipo = tipo;
     }
 
-    public int getDepartamento() {
+    public Departamento getDepartamento() {
         return departamento;
     }
 
-    public void setDepartamento(int departamento) {
+    public void setDepartamento(Departamento departamento) {
         this.departamento = departamento;
     }
 
@@ -162,6 +168,31 @@ public class Actividad_Solicitada {
         this.comentarioEstado = comentarioEstado;
     }
 
+    public Map<Object, Integer> getParticipantes() {
+        return participantes;
+    }
+
+    public void setParticipantes(Map<Object, Integer> participantes) {
+        this.participantes = participantes;
+    }
+
+    public List<Profesor> getProfesoresParticipantes() {
+        return profesoresParticipantes;
+    }
+
+    public void setProfesoresParticipantes(List<Profesor> profesoresParticipantes) {
+        this.profesoresParticipantes = profesoresParticipantes;
+    }
+
+    public List<Profesor> getProfesorResponsables() {
+        return profesorResponsables;
+    }
+
+    public void setProfesorResponsables(List<Profesor> profesorResponsables) {
+        this.profesorResponsables = profesorResponsables;
+    }
+    
+    
     @Override
     public String toString() {
         return "Actividad_Solicitada{" + "id_actividad=" + id_actividad + ", solicitante=" + solicitante + ", titulo=" + titulo + ", tipo=" + tipo + ", departamento=" + departamento + ", prevista=" + prevista + ", fechaInicio=" + fechaInicio + ", fechaFin=" + fechaFin + ", transporte=" + transporte + ", comentarioTransporte=" + comentarioTransporte + ", alojamiento=" + alojamiento + ", comentarioAlojamiento=" + comentarioAlojamiento + ", comentario=" + comentario + ", estado=" + estado + ", comentarioEstado=" + comentarioEstado + '}';

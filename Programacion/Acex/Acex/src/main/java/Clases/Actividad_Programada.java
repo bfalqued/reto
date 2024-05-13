@@ -1,7 +1,11 @@
 
 package Clases;
 
+import Enumerados.EstadoActividad;
+import Enumerados.TipoActividad;
 import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -11,9 +15,11 @@ public class Actividad_Programada extends Actividad_Solicitada{
     private String empresaTransporte;
     private double importeTransporte;
     private String comentarioAdicional;
+    private List<Foto> fotos;
+    private Map <Transporte,Integer> transportes;
 
-    public Actividad_Programada( int id_actividad, String titulo, TipoActividad tipo, int departamento, boolean prevista, LocalDateTime fechaInicio, LocalDateTime fechaFin, boolean transporte, String comentarioTransporte, boolean alojamiento, String comentarioAlojamiento, String comentario, EstadoActividad estado, String comentarioEstado,String empresaTransporte, double importeTransporte, String comentarioAdicional) {
-        super(id_actividad, 0, titulo, tipo, departamento, prevista, fechaInicio, fechaFin, transporte, comentarioTransporte, alojamiento, comentarioAlojamiento, comentario, estado, comentarioEstado);
+    public Actividad_Programada( String titulo, TipoActividad tipo, Departamento departamento, boolean prevista, LocalDateTime fechaInicio, LocalDateTime fechaFin, boolean transporte, String comentarioTransporte, boolean alojamiento, String comentarioAlojamiento, String comentario, EstadoActividad estado, String comentarioEstado,String empresaTransporte, double importeTransporte, String comentarioAdicional) {
+        super( null, titulo, tipo, departamento, prevista, fechaInicio, fechaFin, transporte, comentarioTransporte, alojamiento, comentarioAlojamiento, comentario, estado, comentarioEstado);
         this.empresaTransporte = empresaTransporte;
         this.importeTransporte = importeTransporte;
         this.comentarioAdicional = comentarioAdicional;
@@ -73,12 +79,12 @@ public class Actividad_Programada extends Actividad_Solicitada{
     }
 
     @Override
-    public int getDepartamento() {
+    public Departamento getDepartamento() {
         return super.getDepartamento();
     }
 
     @Override
-    public void setDepartamento(int departamento) {
+    public void setDepartamento(Departamento departamento) {
         super.getDepartamento();
     }
 
@@ -182,6 +188,22 @@ public class Actividad_Programada extends Actividad_Solicitada{
         super.setComentarioEstado(comentarioEstado);
     }
 
+    public List<Foto> getFotos() {
+        return fotos;
+    }
+
+    public void setFotos(List<Foto> fotos) {
+        this.fotos = fotos;
+    }
+
+    public Map<Transporte, Integer> getTransportes() {
+        return transportes;
+    }
+
+    public void setTransportes(Map<Transporte, Integer> transportes) {
+        this.transportes = transportes;
+    }
+    
     @Override
     public String toString() {
         return "Actividad_Programada{" + "empresaTransporte=" + empresaTransporte + ", importeTransporte=" + importeTransporte + ", comentarioAdicional=" + comentarioAdicional + '}';
