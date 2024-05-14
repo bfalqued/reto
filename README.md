@@ -28,7 +28,7 @@
 
 <br>
 
-## Análisis de la aplicacion 
+## Análisis de la aplicacion ✔️
 ***
 El departamento de coordinación de Actividades Complementarias y Extraescolares del centro
  necesita una aplicación de escritorio para gestionar esas actividades y una
@@ -36,11 +36,11 @@ página web en la que se informe de las actividades realizadas
 
 <br>
 
-## Mantenimientos basicos de la aplicación 
+## Mantenimientos basicos de la aplicación ✔️
 ***
 Solo es accesible para el super usuario y el rol de administrador.
 
-##  Cuentas de acceso 
+##  Cuentas de acceso ✔️
 ***
 Habra tres perfiles de usuario:
 <br>
