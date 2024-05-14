@@ -27,14 +27,14 @@
 
 <br>
 
-## Como se llevara a cabo este proceso y los criterios que se necesita 💡
+## Como se llevara a cabo este proceso 💡
 
 <br>
 
 ## Análisis de la aplicacion ✔️
 
 El departamento de coordinación de Actividades Complementarias y Extraescolares del centro
- necesita una aplicación de escritorio para gestionar esas actividades y una
+necesita una aplicación de escritorio para gestionar esas actividades y una
 página web en la que se informe de las actividades realizadas
 
 <br>
