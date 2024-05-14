@@ -72,4 +72,7 @@ Esta opcion es solo para el administrador y los profesores responsables, es la a
 ## Genreración de informes ✔️
 ***
 * Informe del calendario de las actividades programas para el mes siguiente a la fecha actual 
-* Informe anual de las actividades realizadas en un grupo o un curso 
+* Informe anual de las actividades realizadas en un grupo o un curso
+
+## Licencia y condiciones de uso✔️
+***
