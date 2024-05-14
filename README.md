@@ -4,7 +4,7 @@
 
 <br>
 
-## INDICE
+## 🔗 INDICE
 
 - [Documetación general](Documentacion/DocumentoGeneralDefenitiva.md)
 - [Diagrama casos de usos](https://github.com/bfalqued/reto/blob/ba3d391c0777ea3c5bdf36e1b9777d7f7314cdac/Documentacion/DiagramaCasosDeUso.md)
