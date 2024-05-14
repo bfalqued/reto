@@ -1,4 +1,4 @@
-# 📌 retoDaw_2024
+# 📌 Aplicación Acex
 
 ## Reto Daw: Borja, Joel, Elsa , Aymane
 
@@ -16,8 +16,8 @@
 |----------------|-------------------|
 | Lider        |    Borja    | 
 | Secretaria    |  Elsa   |
-|  Desarrollador |      |
-| Analista       |    |
+|  Desarrollador |   Joel   |
+| Analista       |  Aymane  |
 |                | |
 
 
