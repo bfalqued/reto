@@ -2,9 +2,11 @@
 
 ## Integrantes: Borja, Joel, Elsa , Aymane
 
+<a href="https://discord4j.com"><img align="right" src="https://i.postimg.cc/fL8xRkRj/file.png)" width=27%></a>
+[![file.png](https://i.postimg.cc/fL8xRkRj/file.png)](https://postimg.cc/xJbksfHc)
 <br>
 
-## 🔗 INDICE
+## 🔗 INDICE <br> 
 
 - [Documetación general](Documentacion/DocumentoGeneralDefenitiva.md)
 - [Diagrama casos de usos](https://github.com/bfalqued/reto/blob/ba3d391c0777ea3c5bdf36e1b9777d7f7314cdac/Documentacion/DiagramaCasosDeUso.md)
