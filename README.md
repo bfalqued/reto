@@ -3,7 +3,7 @@
 ## Integrantes: Borja, Joel, Elsa , Aymane
 
 <a href="https://discord4j.com"><img align="right" src="https://i.postimg.cc/fL8xRkRj/file.png)" width=27%></a>
-[![file.png](https://i.postimg.cc/fL8xRkRj/file.png)](https://postimg.cc/xJbksfHc)
+
 <br>
 
 ## 🔗 INDICE <br> 
