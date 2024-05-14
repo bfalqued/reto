@@ -1,6 +1,6 @@
 # 📌 Aplicación Acex
 
-## Reto Daw: Borja, Joel, Elsa , Aymane
+## Integrantes: Borja, Joel, Elsa , Aymane
 
 <br>
 
@@ -10,6 +10,7 @@
 - [Diagrama casos de usos](https://github.com/bfalqued/reto/blob/ba3d391c0777ea3c5bdf36e1b9777d7f7314cdac/Documentacion/DiagramaCasosDeUso.md)
 - [Documetación CVS](https://github.com/bfalqued/reto/blob/33513916e5ba556b4d9bd4bfdb3eb3106257d938/Documentacion/DocumentarCSVS.md)
 - [Diario de trabajo]()
+- [Manual de usuario]()
 - [Documento JavaDoc]()
 - [Página web]()
 ***
