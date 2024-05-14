@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates|Poppins&display=swap');
-
+''' java
 * {
     margin: 0;
     padding: 0;
@@ -295,4 +295,5 @@ body {
 .mapa{
     width: 750px;
 }
+''' 
 /* Fin de estilos para contacto */
