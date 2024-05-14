@@ -9,7 +9,8 @@ Para importar los documentos CSV debemos dirigirnos a donde el apartado de "Expo
 
 * Seleccionamos el csv que queremos importar "departamentos.csv" desde nuestro equipo  
 <br>
-[![Captura.png](https://i.postimg.cc/vBk18RRX/Captura.png)](https://postimg.cc/YGN28sCm)
+
+
 
 * Al final de todo seleccionamos las columnas con la otra columna para que los datos puedan estar bien seleccionados y se puedan cargan bien correspondidos 
 [![Captura2.png](https://i.postimg.cc/mgBPgNqx/Captura2.png)](https://postimg.cc/QHY865hS)
