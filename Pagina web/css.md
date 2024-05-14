@@ -295,5 +295,6 @@ body {
 .mapa{
     width: 750px;
 }
-```
 /* Fin de estilos para contacto */
+```
+
