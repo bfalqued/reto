@@ -19,7 +19,7 @@
 | Secretaria    |  Elsa   |
 |  Desarrollador |   Joel   |
 | Analista       |  Aymane  |
-|                | |
+
 
 
 
