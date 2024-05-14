@@ -11,7 +11,7 @@
 - [Documetación CVS](https://github.com/bfalqued/reto/blob/33513916e5ba556b4d9bd4bfdb3eb3106257d938/Documentacion/DocumentarCSVS.md)
 - [Diario de trabajo]()
 - [Manual de usuario]()
-- [Documento JavaDoc]()
+- [JavaDocs]()
 - [Página web]()
 ***
 
