@@ -30,7 +30,7 @@
 <br>
 
 ## Análisis de la aplicacion ✔️
-***
+
 El departamento de coordinación de Actividades Complementarias y Extraescolares del centro
  necesita una aplicación de escritorio para gestionar esas actividades y una
 página web en la que se informe de las actividades realizadas
@@ -42,7 +42,7 @@ página web en la que se informe de las actividades realizadas
 Solo es accesible para el super usuario y el rol de administrador.
 
 ##  Cuentas de acceso ✔️
-***
+
 Habra tres perfiles de usuario:
 <br>
 * Profesor: son los usuarios de la aplicación que solo van a poder crear la solicitud
@@ -53,26 +53,26 @@ de una actividad y podrán modificarla mientras esté en el estado solicitada
 * Aministrador: profesores que forman parte del equipo ACE y pueden completar o modificar cualquier solicitud 
 
 ## Consultar/modificar una solicitud por parte de un profesor ✔️
-***
+
 Si el profesor solo tiene el rol de profesor, siempre va a poder ver las solicitudes creadas por él
 y en las que son responsable. 
 
 ## Aprobación/denegación de solicitudes ✔️
-****
+
 Si el profesor tiene el perfil de equipo directivo o administrador, muestra todas las solicitudes
 que están en estado solicitado
 y denegado apareciendo siempre las solicitudes primero que las denegadas
 
 ## Fase de preparación de la actividad ✔️
-***
+
 Esta opcion es solo para el administrador y los profesores responsables, es la actividad creada a partir de la solicitud aprobada 
 
 * Empresa de transporte: area de texto donde se introducen datos relativos 
 
 ## Genreración de informes ✔️
-***
+
 * Informe del calendario de las actividades programas para el mes siguiente a la fecha actual 
 * Informe anual de las actividades realizadas en un grupo o un curso
 
 ## Licencia y condiciones de uso✔️
-***
+
