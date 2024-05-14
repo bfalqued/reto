@@ -38,7 +38,7 @@ página web en la que se informe de las actividades realizadas
 <br>
 
 ## Mantenimientos basicos de la aplicación ✔️
-***
+
 Solo es accesible para el super usuario y el rol de administrador.
 
 ##  Cuentas de acceso ✔️
