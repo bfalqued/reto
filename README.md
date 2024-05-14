@@ -1,7 +1,7 @@
 # 📌 Aplicación Acex
 
 ## Reto Daw: Borja, Joel, Elsa , Aymane
-*** 
+
 <br>
 
 ## INDICE
