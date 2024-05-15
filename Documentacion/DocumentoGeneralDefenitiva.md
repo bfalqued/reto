@@ -124,11 +124,10 @@ El contenido de la página se divide en secciones, cada una representada por un 
 Cada seccion tiene su propio encabezado y contenido relevante 
 
 ### Decisiones de diseño
-[![Captura-CSS.png](https://i.postimg.cc/Y0cNsX7s/Captura-CSS.png)](https://postimg.cc/tZ5V1NY3)
 
 * Encabezado y Menú de Navegación: Se ha optado por un encabezado fijo que facilita la navegación del usuario en todo momento. El menú de navegación presenta enlaces claros y directos a cada red social del instituto
 
-[![CSS2.png](https://i.postimg.cc/mDVRdn7b/CSS2.png)](https://postimg.cc/bDGKr36M)
+
 
 
 * Fondo y capa semitransparente:El fondo de la página presenta una imagen de montañas nevadas, que evoca una sensación de tranquilidad y naturaleza. Se ha añadido una capa semitransparente sobre el fondo para mejorar la legibilidad del texto y los elementos de la página.
