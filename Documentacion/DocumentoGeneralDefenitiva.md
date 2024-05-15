@@ -296,8 +296,8 @@ En base a la aplicacion que hemos realizado
 ### Diagrama de clases <a name="diagramaClases"></a>
 [![DIAGRAMA-CLASES-EQUIPO2.png](https://i.postimg.cc/rsk1L6YF/DIAGRAMA-CLASES-EQUIPO2.png)](https://postimg.cc/gXgXv7Wf)
 Clases y Atributos
-1. GRUPO
-***
+### 1. GRUPO
+
 id_grupo: PK
 
 Codigo: UK
@@ -308,8 +308,8 @@ Num_Alumnos: int
 
 Activo: Boolean
 
-2. CURSO
-***
+### 2. CURSO
+
 ID_curso: PK
 
 Codigo: UK
@@ -320,8 +320,8 @@ Etapa: Enum
 
 Activo: Boolean
 
-3. ACTIVIDAD_SOLICITADA_O_DENEGADA
-***
+### 3. ACTIVIDAD_SOLICITADA_O_DENEGADA
+
 ID_Act: PK
 
 Solicitante: String
@@ -350,8 +350,8 @@ Estado: Enum
 
 Comentario_Estado: String
 
-4. ACTIVIDAD_PROGRAMADA
-***
+### 4. ACTIVIDAD_PROGRAMADA
+
 Id_Actividad: int
 
 Titulo: Varchar
@@ -384,8 +384,8 @@ Comentario_Estado: String
 
 Empresa_Transporte: String
 
-5. PROFE_RESPONSABLE
-***
+### 5. PROFE_RESPONSABLE
+
 Id_profesor: FK
 Id_actividad: FK
 PROFESOR
@@ -406,8 +406,8 @@ Contrasena: String
 
 Perfil: Enum
 
-6. DEPARTAMENTO
-***
+### 6. DEPARTAMENTO
+
 id_dep: PK
 
 Jefe: int
@@ -418,33 +418,33 @@ Nombre: String
 
 Codigo_Departamento: Char
 
-7. TRANSPORTE
-***
+### 7. TRANSPORTE
+
 Id_Transporte: PK
 
 Tipo: Enum
 
 Comentario: String
 
-* Relaciones
-*** 
-GRUPO tiene una relación de uno a muchos con ACTIVIDAD_SOLICITADA_O_DENEGADA.
+### * Relaciones
 
-CURSO está relacionado con GRUPO mediante una clave foránea.
+* GRUPO tiene una relación de uno a muchos con ACTIVIDAD_SOLICITADA_O_DENEGADA.
 
-ACTIVIDAD_SOLICITADA_O_DENEGADA está relacionada uno a uno con ACTIVIDAD_PROGRAMADA.
+* CURSO está relacionado con GRUPO mediante una clave foránea.
 
-ACTIVIDAD_SOLICITADA_O_DENEGADA está relacionada uno a muchos con PROFE_RESPONSABLE.
+* ACTIVIDAD_SOLICITADA_O_DENEGADA está relacionada uno a uno con ACTIVIDAD_PROGRAMADA.
 
-PROFE_RESPONSABLE tiene claves foráneas hacia PROFESOR y ACTIVIDAD_SOLICITADA_O_DENEGADA.
+* ACTIVIDAD_SOLICITADA_O_DENEGADA está relacionada uno a muchos con PROFE_RESPONSABLE.
 
-PROFESOR tiene una relación de uno a muchos con PROFE_RESPONSABLE.
+* PROFE_RESPONSABLE tiene claves foráneas hacia PROFESOR y ACTIVIDAD_SOLICITADA_O_DENEGADA.
 
-ACTIVIDAD_SOLICITADA_O_DENEGADA está relacionada con DEPARTAMENTO mediante un atributo.
+* PROFESOR tiene una relación de uno a muchos con PROFE_RESPONSABLE.
 
-DEPARTAMENTO tiene una relación de uno a muchos con ACTIVIDAD_PROGRAMADA.
+* ACTIVIDAD_SOLICITADA_O_DENEGADA está relacionada con DEPARTAMENTO mediante un atributo.
 
-TRANSPORTE tiene una relación de uno a muchos con ACTIVIDAD_PROGRAMADA.
+* DEPARTAMENTO tiene una relación de uno a muchos con ACTIVIDAD_PROGRAMADA.
+
+* TRANSPORTE tiene una relación de uno a muchos con ACTIVIDAD_PROGRAMADA.
 ***
 
 ### Decisiones tomadas para realizar la asignacion de cursos y grupos
