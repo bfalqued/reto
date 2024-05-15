@@ -64,4 +64,7 @@ actividad no se encuentre en realizada
 4. El administrador es el que tiene que cambiar el estado de la actividad a realizada.
 
 ### Caso de uso: Ver solcitud
+
+1. Esta opción es solo para el profesor
+2. Es la actividad 
   
