@@ -127,8 +127,80 @@ Cada seccion tiene su propio encabezado y contenido relevante
 
 * Encabezado y Menú de Navegación: Se ha optado por un encabezado fijo que facilita la navegación del usuario en todo momento. El menú de navegación presenta enlaces claros y directos a cada red social del instituto
 
+```java
+/* Estilos para el encabezado */
+.header {
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.header:hover {
+    background-color: rgba(0, 0, 0, 0.767);
+    transition: background-color 0.3s ease; 
+}
 
 
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.container .aside-menu,
+.logo {
+    float: left;
+    line-height: 100px;
+}
+
+.container .aside-menu label {
+    color: #fff;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.logo {
+    margin-top: 2vh;
+    margin-left: 2vh;
+}
+
+.logo a {
+    text-decoration: none;
+}
+
+.logo h1 {
+    color: #fff;
+    font-weight: 400;
+    font-size: 22px;
+    margin-left: 10px;
+}
+
+.container .menu {
+    float: right;
+    line-height: 100px;
+}
+
+.container .menu a {
+    display: inline-block;
+    padding: 15px;
+    line-height: normal;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+    font-size: 15px;
+    margin-right: 5px;
+}
+
+.container .menu a:hover {
+    border-bottom: 2px solid #c7c7c7;
+    padding-bottom: 5px;
+}
+
+/* Fin de Estilos para el encabezado */
+```
 
 * Fondo y capa semitransparente:El fondo de la página presenta una imagen de montañas nevadas, que evoca una sensación de tranquilidad y naturaleza. Se ha añadido una capa semitransparente sobre el fondo para mejorar la legibilidad del texto y los elementos de la página.
 * Galería de Fotos en Cuadrícula: La galería de fotos se presenta en una cuadrícula de tres columnas para una visualización ordenada y estética de las imágenes. Esto facilita la exploración de las fotos y mejora la experiencia del usuario.
