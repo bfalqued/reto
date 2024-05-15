@@ -44,7 +44,7 @@ se ha realizado
 mostramos las solicitudes ordenadas por fecha de inicio de la actividad
 3. 
 
-### Aprobacion/denegacon de solicitudes
+### Caso de uso: Aprobacion/denegacon de solicitudes
 1. El profesor debe tener el perfil de equipo directivo o administrador
 
 
@@ -54,7 +54,7 @@ preparación de la actividad, la solicitud es copiada con toda su información a
 actividad. A partir de este estado la solicitud no puede ser modificada. Todos los cambios que
 queremos incorporar se realizan en la actividad.
 
-### Preparacion de solicitud
+### Caso de uso: Preparacion de solicitud
 
 1. Esta opción es solo para el administrador y los profesores responsables.
 2.  Es la actividad creada a partir de la solicitud aprobada, por lo tanto tiene todos los datos de la solicitud, titulo,estado,alojamiento,prevista,solicitante,transporte...
@@ -62,3 +62,6 @@ queremos incorporar se realizan en la actividad.
 actividad no se encuentre en realizada
 * Se propone que de un aviso si modifica una actividad que falten menos de 5 días para que inicie.
 4. El administrador es el que tiene que cambiar el estado de la actividad a realizada.
+
+### Caso de uso: Ver solcitud
+  
