@@ -73,7 +73,7 @@ Esta opcion es solo para el administrador y los profesores responsables, es la a
 
 * Empresa de transporte: area de texto donde se introducen datos relativos 
 
-## Genreración de informes ✔️
+## Generación de informes ✔️
 
 * Informe del calendario de las actividades programas para el mes siguiente a la fecha actual 
 * Informe anual de las actividades realizadas en un grupo o un curso
