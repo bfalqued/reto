@@ -1,6 +1,6 @@
 # Documentación general ⭐️
 
-## **Indice** 
+## **Índice** 
 
 ### BASE DE DATOS 🔷
 ***
