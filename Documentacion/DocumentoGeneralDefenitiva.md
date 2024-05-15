@@ -7,7 +7,7 @@
 * [Descripcion de la base de datos.](#bd)
 * [Diagrama E/R](#diagramaE/R)
 * [Diagrama relacinal](#diagramaR)
-* Archivo de importacion SQL 
+* [Archivo de importacion SQL ](#archivoSQL) 
 
 ### [WEB](#web)
 ***
@@ -104,7 +104,7 @@ En este diagrama de entidad y relacion, hemos podido representar las cardinalida
 * Este diagrama relacional describe cómo las diferentes entidades en un entorno educativo interactúan entre sí. Los GRUPOS están asociados a CURSOS, y estos grupos pueden participar en ACTIVIDADES_SOLICITADAS_O_DENEGADAS. Los PROFESORES son responsables de estas actividades, y dichas actividades están organizadas por DEPARTAMENTOS. Las ACTIVIDADES_PROGRAMADAS detallan las actividades aprobadas y planificadas, que también están asociadas con los departamentos y pueden requerir TRANSPORTE. Las relaciones y restricciones entre estas tablas garantizan la integridad y coherencia de los datos en la base de datos.
 
 
-### Archivo de importación SQL 
+### Archivo de importación SQL <a name="#archivoSQL"></a>
 *** 
 https://github.com/bfalqued/reto/blob/rama-elsa/Base%20de%20Datos/Scrip
 
