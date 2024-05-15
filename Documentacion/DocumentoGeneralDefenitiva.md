@@ -11,7 +11,7 @@
 
 ### WEB 🔷
 ***
-* [Estructura de la pagina web](#WebEstructura)
+* [Estructura de la pagina web](#webestructura)
 * [Estilos utilizados](#WebEstilos)
 * [Contenido](#WebContenido)
 
@@ -114,7 +114,7 @@ https://github.com/bfalqued/reto/blob/rama-elsa/Base%20de%20Datos/Scrip
 
 ## Web
 [![inicio.png](https://i.postimg.cc/sXVqtBSH/inicio.png)](https://postimg.cc/hJ52mt2V)
-### Estructura de la pagina web <a name="WebEstructura"></a>
+### Estructura de la pagina web <a name="webestructura"></a>
 ***
 
 La estructura de la pagina web sigue un diseño minimalista y funcional, con un encabezado fijo que incluye el logotipo de la instuticion escolar y un menu de navegacion para acceder facilmente a los diferentes apartados. 
