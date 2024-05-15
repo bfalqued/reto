@@ -131,8 +131,36 @@ Cada seccion tiene su propio encabezado y contenido relevante
 
 ### Tipos de estilos utilizados <a name=WebEstilos></a>
 * Estilos Globales: Se han utilizado estilos globales para establecer márgenes, rellenos y fuentes predeterminadas para todos los elementos de la página. Esto garantiza consistencia en todo el diseño y una apariencia uniforme en toda la página web.
+``` java
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+body {
+    background: url(./images/fondo.jpg);
+    background-attachment: fixed;
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+}
+
+.capa {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+````
 * Estilos de encabezado y menu: Los estilos especificos se han aplicado al encabezado y menu de navegacion para mejorar su apariencia y funcionalidad.Se han utilizado suaves y efectos de desplazamiento para una experiencia de usuario mas atractiva
-  ```java
+  
+```java
 /* Estilos para el encabezado */
 .header {
     width: 100%;
@@ -237,7 +265,22 @@ Cada seccion tiene su propio encabezado y contenido relevante
 /* Fin estilos adicionales para la gestión de actividades extraescolares */
 ```
 * Estilos de secciones: Cada seccion de la pagina tiene su propio estilo para destacar el contenido relevante.Se han utilizado fondos semitransparentes y sombras para resaltar las secciones y mejorar su legibilidad 
+```java
+/* Estilos para Contacto */
+.textarea{
+    width: 750px;
+    height: 175px;
+}
 
+.campoemail{
+    width: 300px;
+}
+
+.mapa{
+    width: 750px;
+}
+/* Fin de estilos para contacto */
+```
 ### Contenidos de la web <a name=#WebContenido></a>
 * Actividades: se incluye informacion sobre las activiades extraescolares ofrecidas por la institucion,que pueden incluir deportes,excursiones, charlas, entre otros eventos 
 * Galeria de fotos: se presenta una seleccion de imagenes que muestran momentos especiales capturados durante las activades extracurriculares.Esto permita a los visitantes de la pagina tener una idea de la diversion y la participacion en la comunidad escolar 
@@ -445,6 +488,7 @@ TRANSPORTE tiene una relación de uno a muchos con ACTIVIDAD_PROGRAMADA.
 
     }
 ```
+
 
 
 
