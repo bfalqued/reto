@@ -20,8 +20,8 @@
 
 * [Diagrama de clases](#diagramaClases)
 * [Javadoc ](#)
-* Explicar y justificar las decisiones tomadas para realizar la asignación de grupos/ cursos
-y número de alumnos al registrar una actividad nueva  
+* [Explicar y justificar las decisiones tomadas para realizar la asignación de grupos/ cursos
+y número de alumnos al registrar una actividad nueva](#cursosygrupos)  
 
 <br>
 
@@ -426,7 +426,7 @@ Tipo: Enum
 
 Comentario: String
 
-### * Relaciones
+###  Relaciones
 
 * GRUPO tiene una relación de uno a muchos con ACTIVIDAD_SOLICITADA_O_DENEGADA.
 
@@ -447,7 +447,7 @@ Comentario: String
 * TRANSPORTE tiene una relación de uno a muchos con ACTIVIDAD_PROGRAMADA.
 ***
 
-### Decisiones tomadas para realizar la asignacion de cursos y grupos
+### Decisiones tomadas para realizar la asignacion de cursos y grupos <a name="cursosygrupos"></a>
 
 * Si el profesor ingresa 0 alumnos le saldra una ventana de error el que te tiene que ser superior o igual al número de alumnos o si ingresar demasiados alumnos saltara mismamente un mensaje de error
   
