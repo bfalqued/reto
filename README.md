@@ -58,18 +58,18 @@ de una actividad y podrán modificarla mientras esté en el estado solicitada
 
 ## Consultar/modificar una solicitud por parte de un profesor ✔️
 
-Si el profesor solo tiene el rol de profesor, siempre va a poder ver las solicitudes creadas por él
+* Si el profesor solo tiene el rol de profesor, siempre va a poder ver las solicitudes creadas por él
 y en las que son responsable. 
 
 ## Aprobación/denegación de solicitudes ✔️
 
-Si el profesor tiene el perfil de equipo directivo o administrador, muestra todas las solicitudes
+* Si el profesor tiene el perfil de equipo directivo o administrador, muestra todas las solicitudes
 que están en estado solicitado
 y denegado apareciendo siempre las solicitudes primero que las denegadas
 
 ## Fase de preparación de la actividad ✔️
 
-Esta opcion es solo para el administrador y los profesores responsables, es la actividad creada a partir de la solicitud aprobada 
+* Esta opcion es solo para el administrador y los profesores responsables, es la actividad creada a partir de la solicitud aprobada 
 
 * Empresa de transporte: area de texto donde se introducen datos relativos 
 
