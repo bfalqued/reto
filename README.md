@@ -71,7 +71,7 @@ y denegado apareciendo siempre las solicitudes primero que las denegadas
 
 * Esta opcion es solo para el administrador y los profesores responsables, es la actividad creada a partir de la solicitud aprobada 
 
-* Empresa de transporte: area de texto donde se introducen datos relativos 
+Empresa de transporte: area de texto donde se introducen datos relativos 
 
 ## Generación de informes ✔️
 
