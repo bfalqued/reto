@@ -35,7 +35,7 @@ Integrantes: Borja, Joel, Elsa , Aymane
 
 ## Análisis de la aplicacion ✔️
 
-El departamento de coordinación de Actividades Complementarias y Extraescolares del centro
+* El departamento de coordinación de Actividades Complementarias y Extraescolares del centro
 necesita una aplicación de escritorio para gestionar esas actividades y una
 página web en la que se informe de las actividades realizadas
 
@@ -43,7 +43,7 @@ página web en la que se informe de las actividades realizadas
 
 ## Mantenimientos basicos de la aplicación ✔️
 
-Solo es accesible para el super usuario y el rol de administrador.
+* Solo es accesible para el super usuario y el rol de administrador.
 
 ##  Cuentas de acceso ✔️
 
