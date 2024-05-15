@@ -5,8 +5,8 @@
 ### BASE DE DATOS 🔷
 ***
 * [Descripcion de la base de datos.](#bd)
-* [Diagrama E/R](#diagramaE/R)
-* [Diagrama relacinal](#diagramaR)
+* [Diagrama E/R](#diagramae/r)
+* [Diagrama relacinal](#diagramarelacional)
 * [Archivo de importacion SQL ](#archivoSQL) 
 
 ### WEB 🔷
@@ -87,7 +87,7 @@ y número de alumnos al registrar una actividad nueva](#cursosygrupos)
 ###
 <br>
 
-### Diagrama E/R <a name="diagramaE/R"></a>
+### Diagrama E/R <a name="diagramae/r"></a>
 
 [![Diagrama-ER.png](https://i.postimg.cc/N049Fr39/Diagrama-ER.png)](https://postimg.cc/VSJLH5Lm)
 
@@ -96,7 +96,7 @@ En este diagrama de entidad y relacion, hemos podido representar las cardinalida
 
 <br>
 
-### Diagrama relacional <a name="bdE/R"></a>
+### Diagrama relacional <a name="diagramarelacional"></a>
 ***
 
 [![Modelo-Relacional-Reto-Equipo2-2-drawio.png](https://i.postimg.cc/htRf0rgQ/Modelo-Relacional-Reto-Equipo2-2-drawio.png)](https://postimg.cc/0bZkk7z9)
