@@ -49,12 +49,12 @@ Solo es accesible para el super usuario y el rol de administrador.
 
 Habra tres perfiles de usuario:
 <br>
-* Profesor: son los usuarios de la aplicación que solo van a poder crear la solicitud
+* 👨‍🏫 Profesor: son los usuarios de la aplicación que solo van a poder crear la solicitud
 de una actividad y podrán modificarla mientras esté en el estado solicitada
 
-* Equipo directivo: son los profesores que forman parte del equipo directivo del IES su funcion es aprobar o denegar solicitudes
+* 👨‍🏫Equipo directivo: son los profesores que forman parte del equipo directivo del IES su funcion es aprobar o denegar solicitudes
 
-* Aministrador: profesores que forman parte del equipo ACE y pueden completar o modificar cualquier solicitud 
+* 👨‍🏫Aministrador: profesores que forman parte del equipo ACE y pueden completar o modificar cualquier solicitud 
 
 ## Consultar/modificar una solicitud por parte de un profesor ✔️
 
