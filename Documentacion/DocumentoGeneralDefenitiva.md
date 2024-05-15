@@ -5,7 +5,7 @@
 ### BASE DE DATOS 
 ***
 * [Descripcion de la base de datos.](#bd)
-* [Diagrama E/R](#diagramaE/R)
+* [Diagrama E/R](#bdE/R)
 * [Diagrama relacinal](#diagramaR)
 * Archivo de importacion SQL 
 
@@ -96,7 +96,7 @@ En este diagrama de entidad y relacion, hemos podido representar las cardinalida
 
 <br>
 
-### Diagrama relacional <a name="diagramaR"></a>
+### Diagrama relacional <a name="bdE/R"></a>
 ***
 
 [![Modelo-Relacional-Reto-Equipo2-2-drawio.png](https://i.postimg.cc/htRf0rgQ/Modelo-Relacional-Reto-Equipo2-2-drawio.png)](https://postimg.cc/0bZkk7z9)
