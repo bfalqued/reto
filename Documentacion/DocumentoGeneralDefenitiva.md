@@ -18,7 +18,7 @@
 ### JAVA 🔷
 ***
 
-* [Diagrama de clases](#diagramaClases)
+* [Diagrama de clases](#diagramaclases)
 * [Javadoc ](#)
 * [Explicar y justificar las decisiones tomadas para realizar la asignación de grupos/ cursos
 y número de alumnos al registrar una actividad nueva](#cursosygrupos)  
@@ -293,7 +293,7 @@ En base a la aplicacion que hemos realizado
 
 ## Java 
 
-### Diagrama de clases <a name="diagramaClases"></a>
+### Diagrama de clases <a name="diagramaclases"></a>
 [![DIAGRAMA-CLASES-EQUIPO2.png](https://i.postimg.cc/rsk1L6YF/DIAGRAMA-CLASES-EQUIPO2.png)](https://postimg.cc/gXgXv7Wf)
 Clases y Atributos
 ### 1. GRUPO
