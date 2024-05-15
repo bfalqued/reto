@@ -1,21 +1,21 @@
-# Documentacion general ⭐️
+# Documentación general ⭐️
 
 ## **Indice** 
 
-### BASE DE DATOS 
+### BASE DE DATOS 🔷
 ***
 * [Descripcion de la base de datos.](#bd)
 * [Diagrama E/R](#diagramaE/R)
 * [Diagrama relacinal](#diagramaR)
 * [Archivo de importacion SQL ](#archivoSQL) 
 
-### [WEB](#web)
+### WEB 🔷
 ***
 * [Estructura de la pagina web](#WebEstructura)
 * [Estilos utilizados](#WebEstilos)
 * [Contenido](#WebContenido)
 
-### [JAVA](#java)
+### JAVA 🔷
 ***
 
 * [Diagrama de clases](#diagramaClases)
