@@ -5,7 +5,7 @@
 ### BASE DE DATOS 
 ***
 * [Descripcion de la base de datos.](#bd)
-* [Diagrama E/R](#bdE/R)
+* [Diagrama E/R](#diagramaE/R)
 * [Diagrama relacinal](#diagramaR)
 * Archivo de importacion SQL 
 
