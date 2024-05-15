@@ -79,4 +79,6 @@ Empresa de transporte: area de texto donde se introducen datos relativos
 * Informe anual de las actividades realizadas en un grupo o un curso
 
 ## Licencia y condiciones de uso✔️
+Licencia de Uso Personal
+Licencia de Uso No Comercial: Permite a los usuarios utilizar el software para fines personales o educativos, pero no para fines comerciales.
 
