@@ -202,6 +202,36 @@ Cada seccion tiene su propio encabezado y contenido relevante
 /* Fin de Estilos para el encabezado */
 ```
 
+```java
+/* Fin de Menú lateral */
+
+/* Estilos adicionales para la gestión de actividades extraescolares */
+
+.section {
+    margin-top: 150px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.container h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+.container p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Fin estilos adicionales para la gestión de actividades extraescolares */
+```
+
 * Fondo y capa semitransparente:El fondo de la página presenta una imagen de montañas nevadas, que evoca una sensación de tranquilidad y naturaleza. Se ha añadido una capa semitransparente sobre el fondo para mejorar la legibilidad del texto y los elementos de la página.
 * Galería de Fotos en Cuadrícula: La galería de fotos se presenta en una cuadrícula de tres columnas para una visualización ordenada y estética de las imágenes. Esto facilita la exploración de las fotos y mejora la experiencia del usuario.
 
@@ -226,6 +256,49 @@ En base a la aplicacion que hemos realizado
 [![DIAGRAMA-CLASES-EQUIPO2.png](https://i.postimg.cc/rsk1L6YF/DIAGRAMA-CLASES-EQUIPO2.png)](https://postimg.cc/gXgXv7Wf)
 
 ***
+
+### Decisiones tomadas para realizar la asignacion de cursos y grupos
+
+* Si el profesor ingresa 0 alumnos le saldra una ventana de error el que te tiene que ser superior o igual al número de alumnos o si ingresar demasiados alumnos saltara mismamente un mensaje de error
+  
+[![IMG-8668.png](https://i.postimg.cc/SR9B0Tt3/IMG-8668.png)](https://postimg.cc/Fk9W3ZvV)
+  
+* Este es el codigo que hemos utilizado 
+``` java
+    private void guardargruposparticipantesMouseClicked(java.awt.event.MouseEvent evt) {                                                        
+        int[] gruposSeleccionados = listagruposparticipantes.getSelectedIndices();
+        for (int index : gruposSeleccionados) {
+            String grupoSeleccionado = listagruposparticipantes.getModel().getElementAt(index);
+            int maximoAlumnos = this.obtenerNumAlumnosGrupo(grupoSeleccionado);
+            boolean valido = false;
+            while (!valido) {
+                try {
+                    String inputValue = JOptionPane.showInputDialog("Ingrese el número de alumnos participantes del grupo: " + grupoSeleccionado + grupoSeleccionado + "(Máximo: " + maximoAlumnos + ")");
+                    if (inputValue != null && !inputValue.isEmpty()) {
+                        int number = Integer.parseInt(inputValue);
+                        if (number <= maximoAlumnos && number > 0) {
+                            valido = true;
+                            Mapagruposselecionados.put(grupoSeleccionado, number);
+                        } else {
+                            throw new Exception("Tiene que ser inferior o igual al número máximo de alumnos");
+                        }
+                    } else {
+                        throw new Exception("Insertar el número de alumnos");
+                    }
+                } catch (NumberFormatException ex) {
+                    JOptionPane.showMessageDialog(null, "Ingrese un número válido para " + grupoSeleccionado);
+                } catch (Exception exs) {
+                    JOptionPane.showMessageDialog(null, exs.toString());
+                }
+            }
+        }
+        JOptionPane.showMessageDialog(null, "Selecciones guardadas con éxito:\n" + Mapagruposselecionados);
+        gruposparticipantes.setVisible(false);
+
+    }
+```
+
+
 
 | Tecnologias utilizadas   | Asociado a: |
 |----------------|-------------------|
