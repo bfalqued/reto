@@ -14,7 +14,7 @@ Integrantes: Borja, Joel, Elsa , Aymane
 - [Diario de trabajo]()
 - [Manual de usuario]()
 - [JavaDocs]()
-- [Página web]()
+
 ***
 
 | Asignaciones   | Nombres           |
