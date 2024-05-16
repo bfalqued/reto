@@ -12,7 +12,29 @@ Integrantes: Borja, Joel, Elsa , Aymane
 - [Diagrama casos de usos](https://github.com/bfalqued/reto/blob/ba3d391c0777ea3c5bdf36e1b9777d7f7314cdac/Documentacion/DiagramaCasosDeUso.md)
 - [Documetación CVS](https://github.com/bfalqued/reto/blob/33513916e5ba556b4d9bd4bfdb3eb3106257d938/Documentacion/DocumentarCSVS.md)
 - [Diario de trabajo]()
-- [JavaDocs]()
+
+### BASE DE DATOS 🔷
+***
+* [Descripcion de la base de datos.](#bd)
+* [Diagrama E/R](#diagramae/r)
+* [Diagrama relacinal](#diagramarelacional)
+* [Archivo de importacion SQL](#archivosql) 
+
+### WEB 🔷
+***
+* [Estructura de la pagina web](#webestructura)
+* [Estilos utilizados](#WebEstilos)
+* [Contenido](#WebContenido)
+
+### JAVA 🔷
+***
+
+* [Diagrama de clases](#diagramaclases)
+* [Javadoc ](#)
+* [Explicar y justificar las decisiones tomadas para realizar la asignación de grupos/ cursos
+y número de alumnos al registrar una actividad nueva](#cursosygrupos)  
+
+
 
 ***
 
