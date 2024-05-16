@@ -32,6 +32,8 @@ Integrantes: Borja, Joel, Elsa , Aymane
 * [Javadoc ](#)
 * [Explicar y justificar las decisiones tomadas para realizar la asignación de grupos/ cursos
 y número de alumnos al registrar una actividad nueva](#cursosygrupos)  
+***
+### CONTACTO 🔷
 
 
 
@@ -571,8 +573,10 @@ Comentario: String
     }
 ```
 
+### CONTACTO
 
-
+* Gmail: ies.miguel.herrero.pereda@educantabria.es
+* Télefono:
 
 | Tecnologias utilizadas   | Asociado a: |
 |----------------|-------------------|
