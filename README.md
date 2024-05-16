@@ -175,7 +175,7 @@ Licencia de Uso No Comercial: Permite a los usuarios utilizar el software para f
 
 [![Diagrama-ER.png](https://i.postimg.cc/N049Fr39/Diagrama-ER.png)](https://postimg.cc/VSJLH5Lm)
 
-En este diagrama de entidad y relacion, hemos podido representar las cardinalidades necesarias y los atributos que disponen, ademas mostrando las claves primarias 
+En este diagrama de entidad y relacion, hemos podido representar las cardinalidades necesarias y los atributos que disponen, ademas mostrando las claves primarias de cada clase 
 
 
 <br>
@@ -587,6 +587,8 @@ Comentario: String
 | Visual Studio | Pagina web |
 | Mysql Workbench | Para realizar tablas  |
 | NetBeans | Programar la interfaz   |
+| Logo | Leoanador IA   |
+
 
 
 
