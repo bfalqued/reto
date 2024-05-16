@@ -23,7 +23,7 @@ Integrantes: Borja, Joel, Elsa , Aymane
 ***
 * [Estructura de la pagina web](#webestructura)
 * [Estilos utilizados](#WebEstilos)
-* [Contenido](#WebContenido)
+* [Contenido](#webcontenido)
 
 ### JAVA 🔷
 ***
@@ -362,7 +362,7 @@ body {
 }
 /* Fin de estilos para contacto */
 ```
-### Contenidos de la web <a name=#WebContenido></a>
+### Contenidos de la web <a name=webcontenido></a>
 * Actividades: se incluye informacion sobre las activiades extraescolares ofrecidas por la institucion,que pueden incluir deportes,excursiones, charlas, entre otros eventos 
 * Galeria de fotos: se presenta una seleccion de imagenes que muestran momentos especiales capturados durante las activades extracurriculares.Esto permita a los visitantes de la pagina tener una idea de la diversion y la participacion en la comunidad escolar 
 * Logros y reconocimientos: se destaca el exito y los logros obtenidos por la institucion y sus estudiantes, lo que ayuda a fortalecer la reputacion y la imagen de la escuela
