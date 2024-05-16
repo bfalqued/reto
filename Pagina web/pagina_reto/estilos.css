@@ -190,8 +190,7 @@ body {
 
 /* Fin estilos adicionales para la gestión de actividades extraescolares */
 
-/* Estilos para la galeria */
-
+/* Estilos para la galería */
 .galeria {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -202,40 +201,58 @@ body {
 .galeria img {
     max-width: 100%;
     height: auto;
+    border-radius: 10px; /* Agregamos bordes redondeados */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Agregamos una sombra suave */
 }
 
-.galeria figure{
-    border: black 1px solid;
+/* Estilos para la imagen ampliada */
+.input-ampliar {
+    display: none;
 }
 
-/* Fin de estilo para la galeria */
-
-/*Estilos para la tabla*/
-.actividades {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    margin-bottom: 20px;
-    margin-left: 25%;
-    width: 1045px;
+.input-ampliar:checked + label .imagen {
+    max-width: 100%; 
+    cursor: zoom-out; 
 }
 
-.tabla tr{
+.input-ampliar:checked + label .imagen {
+    position: fixed; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    z-index: 9999; 
+}
+
+
+/* Fin de estilo para la galería */
+
+
+/* Estilos para la tabla */
+.actividades table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.actividades th,
+.actividades td {
+    border: 1px solid #ccc;
+    padding: 8px;
     text-align: center;
 }
 
-.tabla{
-    height: 500px;
-    width: 1000px;
+/* Estilo para las filas impares */
+.actividades tr:nth-child(odd) {
+    background-color: #f2f2f2;
 }
 
-.actividades h2{
-    font-size: 20px;
-    margin-bottom: 10px;
+/* Estilo para el encabezado de la tabla */
+.actividades th {
+    background-color: #333;
+    color: white;
 }
 
-/* Fin de estilo para la tabla*/
+/* Fin de estilos para la tabla */
+
 
 /* Estilos para las noticias */
 .noticia {
