@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="icon" type="image/png" href="./images/logo.png">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="aside-menu">
+                <label for="aside-menu">☰</label>
+            </div>
+            <div class="logo">
+                <a href="./index.html"><img src="./images/logo.png" width="70" height="70"></a>
+            </div>
+            <nav class="menu">
+                <a href="./apartado1.html">Actividades</a>
+                <a href="./apartado2.html">Galería</a>
+                <a href="./apartado3.html">Logros y Reconocimientos</a>
+                <a href="./apartado4.html">Contacto</a>
+            </nav>
+        </div>
+    </header>
+    <div class="capa"></div>
+    <!-- --------------->
+    <input type="checkbox" id="aside-menu">
+    <div class="container-menu">
+        <div class="cont-menu">
+            <nav>
+                <!-- <a href="#">Twitter <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_of_Twitter.svg/512px-Logo_of_Twitter.svg.png" width="25" height="19"></a> -->
+                <a target="_blank" href="https://www.facebook.com/share/xBY8UHLVKaiR7oth/">Facebook <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/768px-Facebook_Logo_%282019%29.png" width="30" height="25"></a>
+                <!-- <a href="#">Youtube <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" width="30" height="20"></a> -->
+                <!-- <a href="#">Tik Tok <img src="https://cdn4.iconfinder.com/data/icons/social-media-flat-7/64/Social-media_Tiktok-512.png" width="25" height="25"></a> -->
+                <a target="_blank" href="https://www.instagram.com/ies.miguelherrero/">Instagram <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/800px-Instagram_icon.png" width="25" height="25"></a>
+                <a target="_blank" href="https://es.linkedin.com/school/ies-miguel-herrero-pereda/?original_referer=https%3A%2F%2Fwww.google.com%2F">LinkedIn <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/2048px-LinkedIn_icon.svg.png" width="30" height="25"></a>
+            </nav>
+            <label for="aside-menu">✖️</label>
+        </div>
+    </div>
+    <!-- Contenido del apartado "Contacto" -->
+    <section class="section">
+        <div class="container">
+            <h2>Contacto</h2><br>
+            <p>Puedes ponerte en contacto con nosotros a través de los siguientes medios:</p>
+            <ul>
+                <li>Teléfono: 942 88 24 98</li>
+                <li>Email: ies.miguel.herrero.pereda@educantabria.es</li>
+                <li>Dirección: P.º de Julio Hauzeur, 59, 39300 Torrelavega, Cantabria</li>
+            </ul>
+            <br>
+            <p>O utiliza el siguiente formulario:</p>
+            <form action="#" method="post">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <label for="email">Email:</label>
+                <input class="campoemail" type="email" id="email" name="email" required><br>
+                <label for="mensaje">Mensaje:</label><br>
+                <textarea class="textarea" id="mensaje" name="mensaje" required></textarea><br>
+                <button type="submit">Enviar</button>
+            </form>
+            <br><br>
+            <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7200.051775228536!2d-4.0650765233592265!3d43.352447571830076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd493e18f1f29733%3A0x1420ebdf20460746!2sIES%20Miguel%20Herrero%20Pereda!5e1!3m2!1ses!2ses!4v1715260303815!5m2!1ses!2ses" 
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+</body>
+</html>
