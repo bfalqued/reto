@@ -1,4 +1,6 @@
 
+## Diagrama casos de uso 💢
+
 [![Diagramas-de-uso-drawio-3.png](https://i.postimg.cc/0yWp92tQ/Diagramas-de-uso-drawio-3.png)](https://postimg.cc/w1NtVHY8)
 
 Por cada usuario se desea registrar en la
