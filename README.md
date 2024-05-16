@@ -185,7 +185,7 @@ En este diagrama de entidad y relacion, hemos podido representar las cardinalida
 
 [![Modelo-Relacional-Reto-Equipo2-2-drawio.png](https://i.postimg.cc/htRf0rgQ/Modelo-Relacional-Reto-Equipo2-2-drawio.png)](https://postimg.cc/0bZkk7z9)
 
-* Este diagrama relacional describe cómo las diferentes entidades en un entorno educativo interactúan entre sí. Los GRUPOS están asociados a CURSOS, y estos grupos pueden participar en ACTIVIDADES_SOLICITADAS_O_DENEGADAS. Los PROFESORES son responsables de estas actividades, y dichas actividades están organizadas por DEPARTAMENTOS. Las ACTIVIDADES_PROGRAMADAS detallan las actividades aprobadas y planificadas, que también están asociadas con los departamentos y pueden requerir TRANSPORTE. Las relaciones y restricciones entre estas tablas garantizan la integridad y coherencia de los datos en la base de datos.
+* Este diagrama muestra cómo se organizan las actividades académicas y cómo diferentes entidades (profesores, departamentos, cursos, grupos) están relacionadas en función de estas actividades. Las claves primarias (PK) y foráneas (FK) garantizan la integridad referencial y permiten la navegación entre las diferentes tablas del modelo.
 
 
 ### Archivo de importación SQL <a name="archivosql"></a>
