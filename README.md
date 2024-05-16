@@ -7,8 +7,7 @@ Integrantes: Borja, Joel, Elsa , Aymane
 <br>
 
 ## 🔗 INDICE <br> 
-
-- [Documetación general](Documentacion/DocumentoGeneralDefenitiva.md)
+- [Introducción](#introduccion)
 - [Diagrama casos de usos](https://github.com/bfalqued/reto/blob/ba3d391c0777ea3c5bdf36e1b9777d7f7314cdac/Documentacion/DiagramaCasosDeUso.md)
 - [Documetación CVS](https://github.com/bfalqued/reto/blob/33513916e5ba556b4d9bd4bfdb3eb3106257d938/Documentacion/DocumentarCSVS.md)
 - [Diario de trabajo]()
@@ -50,7 +49,7 @@ y número de alumnos al registrar una actividad nueva](#cursosygrupos)
 
 <br>
 
-## Como se llevara a cabo este proceso 💡
+## Como se llevara a cabo este proceso 💡 <a name="introduccion"></a>
 
 <br>
 
