@@ -1,4 +1,4 @@
-# 📌 Aplicación Acex  <a href="https://discord4j.com"><img align="right" src="https://i.postimg.cc/fL8xRkRj/file.png)" width=27%></a>
+# 📌 Aplicación Acex  <a href=><img align="right" src="https://i.postimg.cc/fL8xRkRj/file.png)" width=27%></a>
 
 Integrantes: Borja, Joel, Elsa , Aymane
 
