@@ -533,7 +533,7 @@ Comentario: String
 
 ### Decisiones tomadas para realizar la asignacion de cursos y grupos <a name="cursosygrupos"></a>
 
-* Si el profesor ingresa 0 alumnos le saldra una ventana de error el que te tiene que ser superior o igual al número de alumnos o si ingresar demasiados alumnos saltara mismamente un mensaje de error
+* Si el profesor ingresa 0 alumnos le saldra una ventana de error el que te tiene que ser superior o igual al número de alumnos o si ingresa más de 72 alumnos que es el máximo le saldra un mensaje de error para que vuelva a introdcuir los datos
   
 [![IMG-8668.png](https://i.postimg.cc/SR9B0Tt3/IMG-8668.png)](https://postimg.cc/Fk9W3ZvV)
 
@@ -579,6 +579,8 @@ Comentario: String
 * 📫 Gmail: ies.miguel.herrero.pereda@educantabria.es
 * 📲 Télefono: 942 88 24 98
 * 📌 Ubicación: P.º de Julio Hauzeur, 59, 39300, Torrelavega, Cantabria
+
+<br>
 
 | Tecnologias utilizadas   | Asociado a: |
 |----------------|-------------------|
