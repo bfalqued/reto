@@ -8,7 +8,7 @@ Integrantes: Borja, Joel, Elsa , Aymane
 
 ## 🔗 INDICE <br> 
 - [Introducción](#introduccion)
-- [Diagrama casos de usos](https://github.com/bfalqued/reto/blob/ba3d391c0777ea3c5bdf36e1b9777d7f7314cdac/Documentacion/DiagramaCasosDeUso.md)
+
   
 
 ### BASE DE DATOS 🔷
@@ -29,6 +29,7 @@ Integrantes: Borja, Joel, Elsa , Aymane
 ***
 
 * [Diagrama de clases](#diagramaclases)
+* [Diagrama casos de usos](https://github.com/bfalqued/reto/blob/ba3d391c0777ea3c5bdf36e1b9777d7f7314cdac/Documentacion/DiagramaCasosDeUso.md)
 * [Javadoc ](#)
 * [Explicar y justificar las decisiones tomadas para realizar la asignación de grupos/ cursos
 y número de alumnos al registrar una actividad nueva](#cursosygrupos)  
