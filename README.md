@@ -1,17 +1,14 @@
 # 📌 Aplicación Acex    
+Integrantes: Borja, Joel, Elsa , Aymane
+<br>
 <p align="right">
   <a href="https://postimg.cc/0MBhhBj8">
-    <img src="https://i.postimg.cc/C5hYnyVf/LOGODEFINITIVO.png" alt="LOGODEFINITIVO.png">
+    <img src="https://i.postimg.cc/C5hYnyVf/LOGODEFINITIVO.png" alt="LOGODEFINITIVO.png" width="250">
   </a>
 </p>
 
-Integrantes: Borja, Joel, Elsa , Aymane
+## 🔗 INDICE
 
-
-<br>
-<br>
-
-## 🔗 INDICE <br> 
 - [Introducción](#introduccion)
 - [Manual de usuario]()
   
