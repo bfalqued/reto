@@ -9,7 +9,6 @@ Integrantes: Borja, Joel, Elsa , Aymane
 ## 🔗 INDICE <br> 
 - [Introducción](#introduccion)
 - [Diagrama casos de usos](https://github.com/bfalqued/reto/blob/ba3d391c0777ea3c5bdf36e1b9777d7f7314cdac/Documentacion/DiagramaCasosDeUso.md)
-- [Documetación CVS](https://github.com/bfalqued/reto/blob/33513916e5ba556b4d9bd4bfdb3eb3106257d938/Documentacion/DocumentarCSVS.md)
 - [Diario de trabajo]()
 
 ### BASE DE DATOS 🔷
@@ -17,7 +16,8 @@ Integrantes: Borja, Joel, Elsa , Aymane
 * [Descripcion de la base de datos.](#bd)
 * [Diagrama E/R](#diagramae/r)
 * [Diagrama relacinal](#diagramarelacional)
-* [Archivo de importacion SQL](#archivosql) 
+* [Archivo de importacion SQL](#archivosql)
+* [Documetación CVS](https://github.com/bfalqued/reto/blob/33513916e5ba556b4d9bd4bfdb3eb3106257d938/Documentacion/DocumentarCSVS.md)
 
 ### WEB 🔷
 ***
