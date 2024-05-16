@@ -176,8 +176,9 @@ Licencia de Uso No Comercial: Permite a los usuarios utilizar el software para f
 
 [![Diagrama-ER.png](https://i.postimg.cc/N049Fr39/Diagrama-ER.png)](https://postimg.cc/VSJLH5Lm)
 
-* En este diagrama de entidad y relacion, hemos podido representar las cardinalidades necesarias y los atributos que disponen, ademas mostrando las claves primarias de cada clase 
 
+* Este modelo E/R está bastante detallado y parece diseñado para gestionar diferentes aspectos de las actividades educativas, incluyendo la programación de actividades, la participación de cursos y grupos, la gestión de profesores y departamentos, así como el seguimiento del transporte y las fotos asociadas a las actividades.
+* En el podemos observar las claves primarias que poseen en cada clase 
 
 <br>
 
