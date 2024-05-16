@@ -1,12 +1,14 @@
-# 📌 Aplicación Acex  <img align="right" src="https://i.postimg.cc/fL8xRkRj/file.png)" width=27%>
-
+# 📌 Aplicación Acex  
 Integrantes: Borja, Joel, Elsa , Aymane
 
-
 <br>
-<br>
+<p align="right">
+  <a href="https://postimg.cc/0MBhhBj8">
+    <img src="https://i.postimg.cc/C5hYnyVf/LOGODEFINITIVO.png" alt="LOGODEFINITIVO.png" width="250">
+  </a>
+</p>
 
-## 🔗 ÍNDICE <br> 
+## 🔗 ÍNDICE 
 - [Introducción](#introduccion)
 - [Manual de usuario]()
   
