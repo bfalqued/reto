@@ -22,7 +22,7 @@ Integrantes: Borja, Joel, Elsa , Aymane
 ### WEB 🔷
 ***
 * [Estructura de la pagina web](#webestructura)
-* [Estilos utilizados](#WebEstilos)
+* [Estilos utilizados](#webestilos)
 * [Contenido](#webcontenido)
 
 ### JAVA 🔷
@@ -210,7 +210,7 @@ Cada seccion tiene su propio encabezado y contenido relevante
 * Fondo y capa semitransparente:El fondo de la página presenta una imagen de montañas nevadas, que evoca una sensación de tranquilidad y naturaleza. Se ha añadido una capa semitransparente sobre el fondo para mejorar la legibilidad del texto y los elementos de la página.
 * Galería de Fotos en Cuadrícula: La galería de fotos se presenta en una cuadrícula de tres columnas para una visualización ordenada y estética de las imágenes. Esto facilita la exploración de las fotos y mejora la experiencia del usuario.
 
-### Tipos de estilos utilizados <a name=WebEstilos></a>
+### Tipos de estilos utilizados <a name=webestilos></a>
 * Estilos Globales: Se han utilizado estilos globales para establecer márgenes, rellenos y fuentes predeterminadas para todos los elementos de la página. Esto garantiza consistencia en todo el diseño y una apariencia uniforme en toda la página web.
 ``` java
 * {
