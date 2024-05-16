@@ -68,5 +68,5 @@ actividad no se encuentre en realizada
 ### Caso de uso: Ver solcitud
 
 1. Esta opción es solo para el profesor
-2. Es la actividad 
+2. Es la actividad creada apartir de la solicitud aprobada en la que permite ver todos los datos que se han introducido 
   
