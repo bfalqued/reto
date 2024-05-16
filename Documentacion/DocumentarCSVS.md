@@ -12,8 +12,10 @@ Para importar los documentos CSV debemos dirigirnos a donde el apartado de "Expo
 
 
 
-* Al final de todo seleccionamos las columnas con la otra columna para que los datos puedan estar bien seleccionados y se puedan cargan bien correspondidos 
+* Al final de todo seleccionamos las columnas con la otra columna para que los datos puedan estar bien seleccionados y se puedan cargan bien correspondidos
+  
 [![Captura2.png](https://i.postimg.cc/mgBPgNqx/Captura2.png)](https://postimg.cc/QHY865hS)
+
 * Seleccionamos las columnas que queremos seleccionar y que correspondan con su otra 
 columna 
 > Las columnas deben corresponder a su formato y debe de ser en formato uft 8
