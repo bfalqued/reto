@@ -18,7 +18,7 @@ Integrantes: Borja, Joel, Elsa , Aymane
 * [Diagrama E/R](#diagramae/r)
 * [Diagrama relacinal](#diagramarelacional)
 * [Archivo de importacion SQL](#archivosql)
-* [Documetación CVS](https://github.com/bfalqued/reto/blob/33513916e5ba556b4d9bd4bfdb3eb3106257d938/Documentacion/DocumentarCSVS.md)
+* [Documetación CVS](https://github.com/bfalqued/reto/blob/0cb0be7190cba53dc7874c059fbb3eb505d0fb6d/Base%20de%20Datos/DocumentoCSV.md)
 
 ### WEB 🔷
 ***
@@ -30,7 +30,7 @@ Integrantes: Borja, Joel, Elsa , Aymane
 ***
 
 * [Diagrama de clases](#diagramaclases)
-* [Diagrama casos de usos](https://github.com/bfalqued/reto/blob/ba3d391c0777ea3c5bdf36e1b9777d7f7314cdac/Documentacion/DiagramaCasosDeUso.md)
+* [Diagrama casos de usos](https://github.com/bfalqued/reto/blob/8616810d85609e5c6e3c6cef4c2f17ccaf159928/ED/DiagramaCasosDeUso.md)
 * [Javadoc ](#)
 * [Explicar y justificar las decisiones tomadas para realizar la asignación de grupos/ cursos
 y número de alumnos al registrar una actividad nueva](#cursosygrupos)  
