@@ -19,6 +19,9 @@ Para importar los documentos CSV debemos dirigirnos a donde el apartado de "Expo
 * Seleccionamos las columnas que queremos seleccionar y que correspondan con su otra 
 columna 
 > Las columnas deben corresponder a su formato y debe de ser en formato uft 8
+* Datos
+
+  ![imagen](https://github.com/bfalqued/reto/assets/115722474/443a20e3-71d2-4411-931c-1f1ba064f5ce)
 
 ## Tabla Cursos
 
@@ -28,6 +31,9 @@ columna
 [![Captura7.png](https://i.postimg.cc/Xv6QJhWj/Captura7.png)](https://postimg.cc/QFSpYfVw)
 * Seleccionamos las tablas que sean correspondientes con su otra columna para que los datos se puedan ejecutar bien 
 [![Captura6.png](https://i.postimg.cc/Kj5yqL5L/Captura6.png)](https://postimg.cc/0Kr3rzF2)
+* Datos
+  
+  [![Captura-de-pantalla-2024-05-16-225655.png](https://i.postimg.cc/2SD9xh6B/Captura-de-pantalla-2024-05-16-225655.png)](https://postimg.cc/JGpQryj1)
 
 ## Tabla Grupos
 
@@ -37,3 +43,6 @@ columna
 [![Captura8.png](https://i.postimg.cc/7PR1hc1F/Captura8.png)](https://postimg.cc/bdQSFmBg)
 * Nos da la opcion de usar una tabla existente o ya creada, seleccionamos la que ya tenemos creada para poder importar bien los datos 
 [![Capturagrupo4.png](https://i.postimg.cc/g2g2k98R/Capturagrupo4.png)](https://postimg.cc/xXb2t4sT)
+* Datos
+  
+[![Captura-de-pantalla-2024-05-16-225517.png](https://i.postimg.cc/25LcxGYm/Captura-de-pantalla-2024-05-16-225517.png)](https://postimg.cc/jWK4xzCk)
