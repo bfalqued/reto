@@ -1,7 +1,7 @@
 
 ## Diagrama casos de uso 💢
 
-[![Diagramas-de-uso-drawio-3.png](https://i.postimg.cc/0yWp92tQ/Diagramas-de-uso-drawio-3.png)](https://postimg.cc/w1NtVHY8)
+[![Diagrama-Casos-De-Uso-drawio.png](https://i.postimg.cc/Ssnk9rWc/Diagrama-Casos-De-Uso-drawio.png)](https://postimg.cc/Q9Z2GcYM)
 
 
 Tendrá tres perfiles de usuario: Administrador, Profesor y Equipo directivo
