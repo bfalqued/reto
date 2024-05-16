@@ -33,7 +33,8 @@ Integrantes: Borja, Joel, Elsa , Aymane
 * [Explicar y justificar las decisiones tomadas para realizar la asignación de grupos/ cursos
 y número de alumnos al registrar una actividad nueva](#cursosygrupos)  
 ***
-### CONTACTO 🔷
+### CONTACTO 🔷 
+* [Aquí ](#contacto)
 
 
 
@@ -573,10 +574,11 @@ Comentario: String
     }
 ```
 
-### CONTACTO
+### CONTACTO <a name="contacto"></a>
 
-* Gmail: ies.miguel.herrero.pereda@educantabria.es
-* Télefono:
+* 📫 Gmail: ies.miguel.herrero.pereda@educantabria.es
+* 📲 Télefono: 942 88 24 98
+* 📌 Ubicación: P.º de Julio Hauzeur, 59, 39300, Torrelavega, Cantabria
 
 | Tecnologias utilizadas   | Asociado a: |
 |----------------|-------------------|
