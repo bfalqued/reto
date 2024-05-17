@@ -113,7 +113,7 @@ Licencia de Uso No Comercial: Permite a los usuarios utilizar el software para f
 
 ## Base de datos <a name="bd"></a>
 
-[![Diagrama-BD.png](https://i.postimg.cc/rsYwW1js/Diagrama-BD.png)](https://postimg.cc/JHZ8CB9C)
+![Diagrama-BD.png](https://github.com/bfalqued/reto/blob/f5f4a5a7c33c19319e4da7313c959f2b196d5b34/img/DiagramaBd.png)
 ### 1.Tabla Profesor
 * Columnas: id_profesor,dni,nombre,apellidos,correo,contraseña,perfil,activo
 * Clave primaria: id_profesor
@@ -175,7 +175,7 @@ Licencia de Uso No Comercial: Permite a los usuarios utilizar el software para f
 
 ### Diagrama E/R <a name="diagramae/r"></a>
 
-[![Diagrama-ER.png](https://i.postimg.cc/N049Fr39/Diagrama-ER.png)](https://postimg.cc/VSJLH5Lm)
+[![Diagrama-ER.png](https://github.com/bfalqued/reto/blob/f5f4a5a7c33c19319e4da7313c959f2b196d5b34/img/DiagramaER.png)
 
 
 * Este modelo E/R está bastante detallado y parece diseñado para gestionar diferentes aspectos de las actividades educativas, incluyendo la programación de actividades, la participación de cursos y grupos, la gestión de profesores y departamentos, así como el seguimiento del transporte y las fotos asociadas a las actividades.
@@ -186,7 +186,7 @@ Licencia de Uso No Comercial: Permite a los usuarios utilizar el software para f
 ### Diagrama relacional <a name="diagramarelacional"></a>
 ***
 
-[![Modelo-Relacional-Reto-Equipo2-2-drawio.png](https://i.postimg.cc/htRf0rgQ/Modelo-Relacional-Reto-Equipo2-2-drawio.png)](https://postimg.cc/0bZkk7z9)
+[![Modelo-Relacional-Reto-Equipo2-2-drawio.png](https://github.com/bfalqued/reto/blob/f5f4a5a7c33c19319e4da7313c959f2b196d5b34/img/ModeloRelacional.png)
 
 * Este diagrama muestra cómo se organizan las actividades académicas y cómo diferentes entidades (profesores, departamentos, cursos, grupos) están relacionadas en función de estas actividades. Las claves primarias (PK) y foráneas (FK) garantizan la integridad referencial y permiten la navegación entre las diferentes tablas del modelo.
 
@@ -200,7 +200,7 @@ https://github.com/bfalqued/reto/blob/rama-elsa/Base%20de%20Datos/Scrip
 <br>
 
 ## Web
-[![inicio.png](https://i.postimg.cc/sXVqtBSH/inicio.png)](https://postimg.cc/hJ52mt2V)
+[![inicio.png](https://github.com/bfalqued/reto/blob/f5f4a5a7c33c19319e4da7313c959f2b196d5b34/img/inicioPaginaWeb.png)
 ### Estructura de la pagina web <a name="webestructura"></a>
 ***
 
@@ -381,7 +381,7 @@ En base a la aplicacion que hemos realizado
 ## Java 
 
 ### Diagrama de clases <a name="diagramaclases"></a>
-[![DIAGRAMA-CLASES-EQUIPO2.png](https://i.postimg.cc/rsk1L6YF/DIAGRAMA-CLASES-EQUIPO2.png)](https://postimg.cc/gXgXv7Wf)
+[![DIAGRAMA-CLASES-EQUIPO2.png](https://github.com/bfalqued/reto/blob/f5f4a5a7c33c19319e4da7313c959f2b196d5b34/img/DiagramaClases.png)
 Clases y Atributos
 ### 1. GRUPO
 
